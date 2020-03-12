@@ -1,0 +1,43 @@
+# hugo site config
+baseurl = "https://example.com"
+languageCode = "zh-cn"
+defaultContentLanguage = "zh-cn"
+title = "Yukynnの窝"
+theme = "dream"
+
+# copyright = ""
+
+# googleAnalytics = ""
+
+# disqusShortname = ""
+
+# enableRobotsTXT = true
+
+# baseURL = "https://guyueshui.github.io/yukynn"
+preserveTaxonomyNames = true
+enableRobotsTXT = true
+enableEmoji = true
+footnoteReturnLinkContents = "↩"
+hasCJKLanguage = true
+
+
+[params]
+  background = "#f8f8f5"
+  # backgroundImage = "https://images.unsplash.com/photo-1487349703519-90c8e4f426a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1594&q=80"
+  linkColor = "seagreen"
+
+  author = "Yukynn"
+  description = "Yukynn's showcase"
+  avatar = "/me/avatar.png"
+  motto = "Yukynn loves yychi!"
+
+  email = "1012604456@qq.com"
+
+  siteStartYear = 2020
+
+  # favicon = "/favicon.ico"
+
+  # dark mode
+  darkLinkColor = "darkseagreen"
+  darkNav = true
+  dark404Button = true
