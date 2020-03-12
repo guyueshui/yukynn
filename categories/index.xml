@@ -6,7 +6,7 @@
     <description>Recent content in Categories on Yukynnの窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 11 Mar 2020 21:41:15 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 12 Mar 2020 18:58:04 +0800</lastBuildDate>
     
 	<atom:link href="https://example.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>category1</title>
       <link>https://example.com/categories/category1/</link>
-      <pubDate>Wed, 11 Mar 2020 21:41:15 +0800</pubDate>
+      <pubDate>Thu, 12 Mar 2020 18:58:04 +0800</pubDate>
       
       <guid>https://example.com/categories/category1/</guid>
       <description></description>
