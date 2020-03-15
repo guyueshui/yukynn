@@ -1,2 +1,0 @@
-# yukynn
-Yukynn's site

@@ -3,62 +3,62 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://example.com/posts/b/</loc>
+    <loc>https://guyueshui.github.io/yukynn/posts/b/</loc>
     <lastmod>2020-03-12T18:58:04+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/categories/</loc>
+    <loc>https://guyueshui.github.io/yukynn/categories/</loc>
     <lastmod>2020-03-12T18:58:04+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/categories/category1/</loc>
+    <loc>https://guyueshui.github.io/yukynn/categories/category1/</loc>
     <lastmod>2020-03-12T18:58:04+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/posts/</loc>
+    <loc>https://guyueshui.github.io/yukynn/posts/</loc>
     <lastmod>2020-03-12T18:58:04+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/tags/tag1/</loc>
+    <loc>https://guyueshui.github.io/yukynn/tags/tag1/</loc>
     <lastmod>2020-03-12T18:58:04+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/tags/tag2/</loc>
+    <loc>https://guyueshui.github.io/yukynn/tags/tag2/</loc>
     <lastmod>2020-03-12T18:58:04+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/tags/</loc>
+    <loc>https://guyueshui.github.io/yukynn/tags/</loc>
     <lastmod>2020-03-12T18:58:04+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/a/</loc>
-    <lastmod>2020-03-12T18:22:04+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/</loc>
-    <lastmod>2020-03-12T18:22:04+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/about/</loc>
+    <loc>https://guyueshui.github.io/yukynn/about/</loc>
     <lastmod>2020-03-12T18:15:17+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/posts/second/</loc>
+    <loc>https://guyueshui.github.io/yukynn/</loc>
+    <lastmod>2020-03-12T18:15:17+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/yukynn/categories/cat1/</loc>
     <lastmod>2020-03-11T21:41:15+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/posts/hello-world/</loc>
+    <loc>https://guyueshui.github.io/yukynn/posts/second/</loc>
+    <lastmod>2020-03-11T21:41:15+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/yukynn/posts/hello-world/</loc>
     <lastmod>2020-03-11T20:50:39+08:00</lastmod>
   </url>
   
