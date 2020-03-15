@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Yukynnの窝</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 12 Mar 2020 18:58:04 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 11 Mar 2020 21:41:15 +0800</lastBuildDate>
     
 	<atom:link href="https://guyueshui.github.io/yukynn/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>tag1</title>
       <link>https://guyueshui.github.io/yukynn/tags/tag1/</link>
-      <pubDate>Thu, 12 Mar 2020 18:58:04 +0800</pubDate>
+      <pubDate>Wed, 11 Mar 2020 21:41:15 +0800</pubDate>
       
       <guid>https://guyueshui.github.io/yukynn/tags/tag1/</guid>
       <description></description>
@@ -23,9 +23,27 @@
     <item>
       <title>tag2</title>
       <link>https://guyueshui.github.io/yukynn/tags/tag2/</link>
-      <pubDate>Thu, 12 Mar 2020 18:58:04 +0800</pubDate>
+      <pubDate>Wed, 11 Mar 2020 21:41:15 +0800</pubDate>
       
       <guid>https://guyueshui.github.io/yukynn/tags/tag2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://guyueshui.github.io/yukynn/tags/linux/</link>
+      <pubDate>Fri, 22 Nov 2019 16:59:46 +0800</pubDate>
+      
+      <guid>https://guyueshui.github.io/yukynn/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shell</title>
+      <link>https://guyueshui.github.io/yukynn/tags/shell/</link>
+      <pubDate>Fri, 22 Nov 2019 16:59:46 +0800</pubDate>
+      
+      <guid>https://guyueshui.github.io/yukynn/tags/shell/</guid>
       <description></description>
     </item>
     

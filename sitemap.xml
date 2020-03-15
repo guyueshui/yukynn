@@ -3,41 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://guyueshui.github.io/yukynn/posts/b/</loc>
-    <lastmod>2020-03-12T18:58:04+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://guyueshui.github.io/yukynn/categories/</loc>
-    <lastmod>2020-03-12T18:58:04+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://guyueshui.github.io/yukynn/categories/category1/</loc>
-    <lastmod>2020-03-12T18:58:04+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://guyueshui.github.io/yukynn/posts/</loc>
-    <lastmod>2020-03-12T18:58:04+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://guyueshui.github.io/yukynn/tags/tag1/</loc>
-    <lastmod>2020-03-12T18:58:04+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://guyueshui.github.io/yukynn/tags/tag2/</loc>
-    <lastmod>2020-03-12T18:58:04+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://guyueshui.github.io/yukynn/tags/</loc>
-    <lastmod>2020-03-12T18:58:04+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://guyueshui.github.io/yukynn/about/</loc>
     <lastmod>2020-03-12T18:15:17+08:00</lastmod>
   </url>
@@ -53,6 +18,31 @@
   </url>
   
   <url>
+    <loc>https://guyueshui.github.io/yukynn/categories/</loc>
+    <lastmod>2020-03-11T21:41:15+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/yukynn/posts/</loc>
+    <lastmod>2020-03-11T21:41:15+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/yukynn/tags/tag1/</loc>
+    <lastmod>2020-03-11T21:41:15+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/yukynn/tags/tag2/</loc>
+    <lastmod>2020-03-11T21:41:15+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/yukynn/tags/</loc>
+    <lastmod>2020-03-11T21:41:15+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://guyueshui.github.io/yukynn/posts/second/</loc>
     <lastmod>2020-03-11T21:41:15+08:00</lastmod>
   </url>
@@ -60,6 +50,51 @@
   <url>
     <loc>https://guyueshui.github.io/yukynn/posts/hello-world/</loc>
     <lastmod>2020-03-11T20:50:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/yukynn/posts/shell-intro/</loc>
+    <lastmod>2019-11-22T16:59:46+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/yukynn/tags/linux/</loc>
+    <lastmod>2019-11-22T16:59:46+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/yukynn/categories/notes/</loc>
+    <lastmod>2019-11-22T16:59:46+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/yukynn/tags/shell/</loc>
+    <lastmod>2019-11-22T16:59:46+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/yukynn/posts/tricks/</loc>
+    <lastmod>2019-01-17T22:19:05+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/yukynn/categories/linux/</loc>
+    <lastmod>2018-08-13T10:07:05+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/yukynn/posts/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85linux/</loc>
+    <lastmod>2018-08-13T10:07:05+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/yukynn/categories/jottings/</loc>
+    <lastmod>2015-12-27T14:39:33+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://guyueshui.github.io/yukynn/posts/%E9%9B%AA%E5%8E%8B%E8%BD%A9%E9%9B%86/</loc>
+    <lastmod>2015-12-27T14:39:33+00:00</lastmod>
   </url>
   
 </urlset>

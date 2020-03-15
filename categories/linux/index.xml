@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Yukynnの窝</title>
+    <link>https://guyueshui.github.io/yukynn/categories/linux/</link>
+    <description>Recent content in Linux on Yukynnの窝</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 13 Aug 2018 10:07:05 +0000</lastBuildDate>
+    
+	<atom:link href="https://guyueshui.github.io/yukynn/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>记一次重装 Linux</title>
+      <link>https://guyueshui.github.io/yukynn/posts/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85linux/</link>
+      <pubDate>Mon, 13 Aug 2018 10:07:05 +0000</pubDate>
+      
+      <guid>https://guyueshui.github.io/yukynn/posts/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85linux/</guid>
+      <description>放假回家，因故将笔记本电池弄到枯竭。结果再次开启，发现 startx 启动 gnome-session 失败。几经解决未果，只好重装！ 安装 Archlinux 基本安装步骤都是按照 ArchWiki 上的 Installation Guide 以及简书上的</description>
+    </item>
+    
+  </channel>
+</rss>
