@@ -1,0 +1,44 @@
+# ref: http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html
+# see: https://gist.github.com/lisez/41cebe4eb9190a5c5e879fee5933beb1
+# ref: https://immmmm.com/hugo-github-actions/
+
+name: Blog deploy   # as you like
+
+on:
+  push:
+    branches:
+      - src # trigger time
+
+env:
+  TZ: Asia/Shanghai
+
+jobs:
+  blog-deploy:
+    name: Hugo blog build & deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout src
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+
+      ## Too hard to pass!
+      # - name: AutoCorrect
+      #   uses: huacnlee/autocorrect-action@main
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 0.121.2
+          extended: true
+
+      - name: Build
+        run: hugo --minify --gc --cleanDestinationDir
+
+      - name: Deploy to master
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+          PUBLISH_BRANCH: master
+          PUBLISH_DIR: ./public
