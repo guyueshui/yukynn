@@ -1,1412 +1,70 @@
-<!DOCTYPE html>
-<html><head>
-<title>Useful Tricks</title>
-
-<meta charset="utf-8">
-<meta name="X-UA-Compatible" content="IE=edge">
-<meta name="google-site-verification" content="">
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-<meta content="telephone=no" name="format-detection">
-<meta name="renderer" content="webkit">
-<meta name="theme-color" content="#ffffff">
-
-
-
-
-<script src="/yukynn/vendor/js/jquery.min.js" ></script>
-<script src="/yukynn/vendor/js/popper.min.js" ></script>
-<script src="/yukynn/vendor/js/bootstrap.min.js" ></script>
-<script src="/yukynn/vendor/js/smooth-scroll.polyfills.min.js" ></script>
-<link type="text/css" rel="stylesheet" href="/yukynn/vendor/css/bootstrap.min.css">
-<script src="/yukynn/vendor/js/vue.min.js" ></script>
-
-
-
-
-<link rel="stylesheet" href="https://guyueshui.github.io/yukynn/scss/journal.min.547363aa8d50f9c20525dabb519c375418cb4c12e08f5f30ba773697f595a237.css" integrity="sha256-VHNjqo1Q&#43;cIFJdq7UZw3VBjLTBLgj18wunc2l/WVojc=" media="screen">
-
-<script src="https://guyueshui.github.io/yukynn/js/loadCSS.js"></script>
-<script src="https://guyueshui.github.io/yukynn/js/table.js"></script>
-
-
-<script src="https://guyueshui.github.io/yukynn/js/toc.js"></script>
-
-
-<script>
-    loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
-</script>
-
-
-
-
-
-
-</head><body>
-    	<div id="app"><div ref="sideContainer" class="side-container">
-    
-    <a class="a-block nav-head false" href="https://guyueshui.github.io/yukynn">
-    
-        <div class="nav-title">
-            Yukynnの窝
-        </div>
-        
-        <div class="nav-subtitle">
-            子在川上曰，逝者如斯夫。
-        </div>
-        
-    </a>
-
-    <div class="nav-link-list">
-        
-        
-            
-                
-                
-                    
-                
-                <a class="a-block nav-link-item active" href="/yukynn/posts">
-                    文章
-                </a>
-        
-            
-                
-                
-                <a class="a-block nav-link-item false" href="/yukynn/categories">
-                    分类
-                </a>
-        
-            
-                
-                
-                <a class="a-block nav-link-item false" href="/yukynn/tags">
-                    标签
-                </a>
-        
-            
-                
-                
-                <a class="a-block nav-link-item false" href="/yukynn/about">
-                    关于
-                </a>
-        
-            
-                
-                
-                <a class="a-block nav-link-item false" href="/yukynn/index.xml">
-                    订阅
-                </a>
-        
-    </div>
-
-    
-
-    <div class="nav-footer">
-        Powered by <a href="https://gohugo.io">Hugo</a>
-|
-Theme - <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a>
-<br>
-&copy;
-	
-	2020 Yukynnの窝
-	
-
-    </div>
-    
-</div><div ref="extraContainer" class="extra-container">
-    
-    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
-
-
-	<div class="toc-content">
-	
-		
-		
-		
-		<center>- CATALOG -</center>
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#ffmepg" v-on:click="closeDrawer" id="ffmepg-nav">
-										 FFmepg
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#%e8%bd%ac%e8%a7%86%e9%a2%91%e4%b8%bagif" v-on:click="closeDrawer" id="转视频为gif-nav">
-										 转视频为gif
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#imagemagick" v-on:click="closeDrawer" id="imagemagick-nav">
-										 ImageMagick
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#%e5%9b%be%e7%89%87%e8%bd%ac%e6%8d%a2" v-on:click="closeDrawer" id="图片转换-nav">
-										 图片转换
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#shell" v-on:click="closeDrawer" id="shell-nav">
-										 Shell
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#%e8%a1%8c%e5%86%85%e6%93%8d%e4%bd%9c" v-on:click="closeDrawer" id="行内操作-nav">
-										 行内操作
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#%e4%bb%bb%e5%8a%a1%e6%8e%a7%e5%88%b6" v-on:click="closeDrawer" id="任务控制-nav">
-										 任务控制
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#%e5%90%8e%e5%8f%b0%e8%bf%90%e8%a1%8c%e5%91%bd%e4%bb%a4" v-on:click="closeDrawer" id="后台运行命令-nav">
-										 后台运行命令
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#%e5%90%8c%e6%97%b6%e8%be%93%e5%87%ba%e5%88%b0console%e5%92%8c%e6%96%87%e4%bb%b6" v-on:click="closeDrawer" id="同时输出到console和文件-nav">
-										 同时输出到console和文件
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#%e4%bb%8e%e7%b3%bb%e7%bb%9f%e4%b8%ad%e8%b8%a2%e5%87%ba%e6%9f%90%e4%b8%aa%e7%94%a8%e6%88%b7" v-on:click="closeDrawer" id="从系统中踢出某个用户-nav">
-										 从系统中踢出某个用户
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#command-find" v-on:click="closeDrawer" id="command-find-nav">
-										 Command find
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#command-grep" v-on:click="closeDrawer" id="command-grep-nav">
-										 Command grep
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#command-sed" v-on:click="closeDrawer" id="command-sed-nav">
-										 Command sed
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#git" v-on:click="closeDrawer" id="git-nav">
-										 Git
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#command-g" v-on:click="closeDrawer" id="command-g-nav">
-										 Command g&#43;&#43;
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#aria2c" v-on:click="closeDrawer" id="aria2c-nav">
-										 Aria2c
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#mpv" v-on:click="closeDrawer" id="mpv-nav">
-										 MPV
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#html" v-on:click="closeDrawer" id="html-nav">
-										 HTML
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#%e4%bd%bf%e7%94%a8xrandr%e8%ae%be%e7%bd%ae%e5%a4%9a%e5%b1%8f%e6%98%be%e7%a4%ba" v-on:click="closeDrawer" id="使用xrandr设置多屏显示-nav">
-										 使用xrandr设置多屏显示
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#%e7%bd%91%e7%bb%9c" v-on:click="closeDrawer" id="网络-nav">
-										 网络
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#htop%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c" v-on:click="closeDrawer" id="htop基本操作-nav">
-										 Htop基本操作
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#reference" v-on:click="closeDrawer" id="reference-nav">
-										 Reference
-									</a>
-								</li>
-						
-							</ul>
-						
-					
-				
-			
-	</div>
-
-</div>
-    
-    <div class="pagination">
-        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
-            <i class="material-icons pagination-action-icon">
-                keyboard_arrow_up
-            </i>
-        </a>
-        
-    </div>
-</div><div class="single-column-drawer-container" ref="drawer"
-     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
-    <div class="drawer-content">
-        <div class="drawer-menu">
-            
-            
-                
-                    
-                    
-                        
-                    
-                    <a class="a-block drawer-menu-item active" href="/yukynn/posts">
-                        文章
-                    </a>
-            
-                
-                    
-                    
-                    <a class="a-block drawer-menu-item false" href="/yukynn/categories">
-                        分类
-                    </a>
-            
-                
-                    
-                    
-                    <a class="a-block drawer-menu-item false" href="/yukynn/tags">
-                        标签
-                    </a>
-            
-                
-                    
-                    
-                    <a class="a-block drawer-menu-item false" href="/yukynn/about">
-                        关于
-                    </a>
-            
-                
-                    
-                    
-                    <a class="a-block drawer-menu-item false" href="/yukynn/index.xml">
-                        订阅
-                    </a>
-            
-            
-            <div class="toc">
-
-
-	<div class="toc-content">
-	
-		
-		
-		
-		<center>- CATALOG -</center>
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#ffmepg" v-on:click="closeDrawer" id="ffmepg-nav">
-										 FFmepg
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#%e8%bd%ac%e8%a7%86%e9%a2%91%e4%b8%bagif" v-on:click="closeDrawer" id="转视频为gif-nav">
-										 转视频为gif
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#imagemagick" v-on:click="closeDrawer" id="imagemagick-nav">
-										 ImageMagick
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#%e5%9b%be%e7%89%87%e8%bd%ac%e6%8d%a2" v-on:click="closeDrawer" id="图片转换-nav">
-										 图片转换
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#shell" v-on:click="closeDrawer" id="shell-nav">
-										 Shell
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#%e8%a1%8c%e5%86%85%e6%93%8d%e4%bd%9c" v-on:click="closeDrawer" id="行内操作-nav">
-										 行内操作
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#%e4%bb%bb%e5%8a%a1%e6%8e%a7%e5%88%b6" v-on:click="closeDrawer" id="任务控制-nav">
-										 任务控制
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#%e5%90%8e%e5%8f%b0%e8%bf%90%e8%a1%8c%e5%91%bd%e4%bb%a4" v-on:click="closeDrawer" id="后台运行命令-nav">
-										 后台运行命令
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#%e5%90%8c%e6%97%b6%e8%be%93%e5%87%ba%e5%88%b0console%e5%92%8c%e6%96%87%e4%bb%b6" v-on:click="closeDrawer" id="同时输出到console和文件-nav">
-										 同时输出到console和文件
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#%e4%bb%8e%e7%b3%bb%e7%bb%9f%e4%b8%ad%e8%b8%a2%e5%87%ba%e6%9f%90%e4%b8%aa%e7%94%a8%e6%88%b7" v-on:click="closeDrawer" id="从系统中踢出某个用户-nav">
-										 从系统中踢出某个用户
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#command-find" v-on:click="closeDrawer" id="command-find-nav">
-										 Command find
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#command-grep" v-on:click="closeDrawer" id="command-grep-nav">
-										 Command grep
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#command-sed" v-on:click="closeDrawer" id="command-sed-nav">
-										 Command sed
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#git" v-on:click="closeDrawer" id="git-nav">
-										 Git
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#command-g" v-on:click="closeDrawer" id="command-g-nav">
-										 Command g&#43;&#43;
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#aria2c" v-on:click="closeDrawer" id="aria2c-nav">
-										 Aria2c
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#mpv" v-on:click="closeDrawer" id="mpv-nav">
-										 MPV
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#html" v-on:click="closeDrawer" id="html-nav">
-										 HTML
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#%e4%bd%bf%e7%94%a8xrandr%e8%ae%be%e7%bd%ae%e5%a4%9a%e5%b1%8f%e6%98%be%e7%a4%ba" v-on:click="closeDrawer" id="使用xrandr设置多屏显示-nav">
-										 使用xrandr设置多屏显示
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#%e7%bd%91%e7%bb%9c" v-on:click="closeDrawer" id="网络-nav">
-										 网络
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#htop%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c" v-on:click="closeDrawer" id="htop基本操作-nav">
-										 Htop基本操作
-									</a>
-								</li>
-						
-							</ul>
-						
-							</ul>
-						
-					
-				
-			
-				
-				
-					
-						
-						
-							<ul>
-						
-						
-								<li>
-				 					<a href="#reference" v-on:click="closeDrawer" id="reference-nav">
-										 Reference
-									</a>
-								</li>
-						
-							</ul>
-						
-					
-				
-			
-	</div>
-
-</div>
-            
-        </div>
-    </div>
-</div>
-<transition name="fade">
-    <div v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
-</transition>
-<nav ref="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
-    <div ref="navBackground" class="nav-background"></div>
-    <div class="container container-narrow nav-content">
-        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
-            <i class="material-icons">
-                menu
-            </i>
-        </button>
-        <a ref="navTitle" class="navbar-brand" href="https://guyueshui.github.io/yukynn">
-            Yukynnの窝
-        </a>
-    </div>
-</nav>
-<div class="single-column-header-container" ref="pageHead"
-     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
-    <a href="https://guyueshui.github.io/yukynn">
-        <div class="single-column-header-title">Yukynnの窝</div>
-        
-        <div class="single-column-header-subtitle">子在川上曰，逝者如斯夫。</div>
-        
-
-    </a>
-</div>
-            <div id="content">
-<div ref="streamContainer" class="stream-container">
-    <div class="post-list-container post-list-container-shadow">
-        <div class="post">
-            
-            
-            
-                
-            
-
-            <div class="post-head-wrapper"
-                 style="background-image: url('https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1584298337676&amp;di=f902d426cd24c82e49979533a32b5d3f&amp;imgtype=0&amp;src=http%3A%2F%2Fp0.ifengimg.com%2Fpmop%2F2018%2F0725%2F2166270E50050F66EFF10D2865A19585C7682029_size45_w240_h240.gif')">
-                
-                <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1584298337676&amp;di=f902d426cd24c82e49979533a32b5d3f&amp;imgtype=0&amp;src=http%3A%2F%2Fp0.ifengimg.com%2Fpmop%2F2018%2F0725%2F2166270E50050F66EFF10D2865A19585C7682029_size45_w240_h240.gif" style="display: none;"></img>
-                <div class="post-title">
-                    Useful Tricks
-                    <div class="post-meta">
-                        
-                        <time itemprop="datePublished">
-                            2019-01-17 22:19
-                        </time>
-                        
-
-                        
-                            <i class="material-icons" style="">folder</i>
-                                <a href="/yukynn/categories/notes">notes</a>
-                                &nbsp;
-                        
-
-                        
-                            <i class="material-icons" style="">label</i>
-                            
-                                <a href="/yukynn/tags/jojo">jojo</a>
-                                &nbsp;
-                            
-                                <a href="/yukynn/tags/koko">koko</a>
-                                &nbsp;
-                            
-                        
-                    </div>
-                </div>
-            </div>
-            
-            <div class="post-body-wrapper">
-                <div class="post-body">
-                    <pre><code> __    __               __           __               ____    ___                       
+<!doctype html><html><head><title>Useful Tricks</title>
+<meta charset=utf-8><meta name=X-UA-Compatible content="IE=edge"><meta name=google-site-verification content><meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" name=viewport><meta content="telephone=no" name=format-detection><meta name=description content="掌握这些小技巧，让你事半功倍！"><meta name=renderer content="webkit"><meta name=theme-color content="#ffffff"><meta property="og:title" content="Useful Tricks"><meta property="og:description" content="掌握这些小技巧，让你事半功倍！"><meta property="og:type" content="article"><meta property="og:url" content="https://example.com/posts/tricks/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2019-01-17T22:19:05+00:00"><meta property="article:modified_time" content="2019-01-17T22:19:05+00:00"><meta property="og:site_name" content="My Blog"><meta name=twitter:card content="summary"><meta name=twitter:title content="Useful Tricks"><meta name=twitter:description content="掌握这些小技巧，让你事半功倍！"><script src=/js/toc.js></script><link type=text/css rel=stylesheet href=/vendor/css/bootstrap.min.css><link rel=stylesheet href=/scss/dark-mode.min.479cf115a0c83f48478127322ac2da19ccc9d25c46abc4c319deb96a8a679470.css integrity="sha256-R5zxFaDIP0hHgScyKsLaGczJ0lxGq8TDGd65aopnlHA=" media=screen><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Material+Icons"><script>console.log("Hello from 'layouts/partials/extended_head.html'")</script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;700&display=swap" rel=stylesheet><link rel=stylesheet href=/css/even-custom.css></head><body><div id=app><div class=single-column-drawer-container id=drawer v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }"><div class=drawer-content><div class=drawer-menu><a class="a-block drawer-menu-item active" href=/posts>归档
+</a><a class="a-block drawer-menu-item false" href=/tags>标签
+</a><a class="a-block drawer-menu-item false" href=/index.xml>订阅</a><div class=toc><div class=toc-content><center>- -</center><ul><ul><li><a href=#ffmepg class=nav-ffmepg>FFmepg</a></li><ul><li><a href=#%e8%bd%ac%e8%a7%86%e9%a2%91%e4%b8%ba-gif class=nav-转视频为-gif>转视频为 gif</a></li><li><a href=#vob-%e8%bd%ac-mp4 class=nav-vob-转-mp4>VOB 转 MP4</a></li><li><a href=#ts-%e8%bd%ac-mp4 class=nav-ts-转-mp4>TS 转 MP4</a></li></ul><li><a href=#imagemagick class=nav-imagemagick>ImageMagick</a></li><ul><li><a href=#%e5%9b%be%e7%89%87%e8%bd%ac%e6%8d%a2 class=nav-图片转换>图片转换</a></li></ul><li><a href=#shell class=nav-shell>Shell</a></li><ul><li><a href=#%e8%a1%8c%e5%86%85%e6%93%8d%e4%bd%9c class=nav-行内操作>行内操作</a></li><li><a href=#%e4%bb%bb%e5%8a%a1%e6%8e%a7%e5%88%b6 class=nav-任务控制>任务控制</a></li><li><a href=#%e5%90%8e%e5%8f%b0%e8%bf%90%e8%a1%8c%e5%91%bd%e4%bb%a4 class=nav-后台运行命令>后台运行命令</a></li><li><a href=#%e5%90%8c%e6%97%b6%e8%be%93%e5%87%ba%e5%88%b0-console-%e5%92%8c%e6%96%87%e4%bb%b6 class=nav-同时输出到-console-和文件>同时输出到 console 和文件</a></li><li><a href=#%e4%bb%8e%e7%b3%bb%e7%bb%9f%e4%b8%ad%e8%b8%a2%e5%87%ba%e6%9f%90%e4%b8%aa%e7%94%a8%e6%88%b7 class=nav-从系统中踢出某个用户>从系统中踢出某个用户</a></li></ul><li><a href=#command-find class=nav-command-find>Command find</a></li><li><a href=#command-grep class=nav-command-grep>Command grep</a></li><li><a href=#command-xargs class=nav-command-xargs>Command xargs</a></li><li><a href=#command-sed class=nav-command-sed>Command sed</a></li><li><a href=#command-cut class=nav-command-cut>Command cut</a></li><li><a href=#git class=nav-git>Git</a></li><li><a href=#command-g class=nav-command-g>Command g++</a></li><li><a href=#aria2c class=nav-aria2c>Aria2c</a></li><li><a href=#mpv class=nav-mpv>MPV</a></li><li><a href=#html class=nav-html>HTML</a></li><li><a href=#%e4%bd%bf%e7%94%a8xrandr%e8%ae%be%e7%bd%ae%e5%a4%9a%e5%b1%8f%e6%98%be%e7%a4%ba class=nav-使用xrandr设置多屏显示>使用xrandr设置多屏显示</a></li><li><a href=#%e7%bd%91%e7%bb%9c class=nav-网络>网络</a></li><li><a href=#htop-%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c class=nav-htop-基本操作>Htop 基本操作</a></li></ul><li><a href=#reference class=nav-reference>Reference</a></li></ul></div></div></div></div></div><transition name=fade><div id=drawer-mask v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if=isDrawerOpen v-on:click=toggleDrawer></div></transition><nav id=navBar class="navbar sticky-top navbar-light single-column-nav-container"><div id=navBackground class=nav-background></div><div class="container container-narrow nav-content"><button id=nav_dropdown_btn class=nav-dropdown-toggle type=button v-on:click=toggleDrawer>
+<i class=material-icons>menu
+</i></button>
+<a id=navTitle class=navbar-brand href=https://example.com>Yukynnの窝
+</a><button type=button class=nav-darkmode-toggle id=darkModeToggleButton2>
+<i class=material-icons id=darkModeToggleIcon2>dark_mode</i></button></div></nav><div class=single-column-header-container id=pageHead v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }"><a href=https://example.com><div class=single-column-header-title>Yukynnの窝</div><div class=single-column-header-subtitle>子在川上曰，逝者如斯夫。</div></a></div><div id=content><div id=streamContainer class=stream-container><div class="post-list-container post-list-container-shadow"><div class=post><div class=post-head-wrapper style=background-image:url(https://example.com/artworks/bilibilier.jpg)><div class=post-title>Useful Tricks<div class=post-subtitle>掌握这些小技巧，让你事半功倍！</div><div class=post-meta><time itemprop=datePublished></time><i class=material-icons>label</i>
+<a href=/tags/ported>ported</a>
+&nbsp;
+<a href=/tags/yychi>yychi</a>
+&nbsp;
+<a href=/tags/a>a</a>
+&nbsp;
+<a href=/tags/b>b</a>
+&nbsp;
+<a href=/tags/c>c</a>
+&nbsp;</div></div></div><div class=post-body-wrapper><div class=post-body v-pre><pre tabindex=0><code> __    __               __           __               ____    ___                       
 /\ \  /\ \             /\ \      __ /\ \             /\  _`\ /\_ \                      
-\ `\`\\/'/__  __    ___\ \ \___ /\_\\ \/      ____   \ \ \L\ \//\ \     ___      __     
- `\ `\ /'/\ \/\ \  /'___\ \  _ `\/\ \\/      /',__\   \ \  _ &lt;'\ \ \   / __`\  /'_ `\   
+\ `\`\\/&#39;/__  __    ___\ \ \___ /\_\\ \/      ____   \ \ \L\ \//\ \     ___      __     
+ `\ `\ /&#39;/\ \/\ \  /&#39;___\ \  _ `\/\ \\/      /&#39;,__\   \ \  _ &lt;&#39;\ \ \   / __`\  /&#39;_ `\   
    `\ \ \\ \ \_\ \/\ \__/\ \ \ \ \ \ \      /\__, `\   \ \ \L\ \\_\ \_/\ \L\ \/\ \L\ \  
      \ \_\\/`____ \ \____\\ \_\ \_\ \_\     \/\____/    \ \____//\____\ \____/\ \____ \ 
       \/_/ `/___/&gt; \/____/ \/_/\/_/\/_/      \/___/      \/___/ \/____/\/___/  \/___L\ \
               /\___/                                                             /\____/
-              \/__/                                                              \_/__/ '`
-</code></pre><p>此页内容多为软件使用技巧，绝大部分内容来自互联网，如有侵权，请与<a href="mailto:guyueshui002@gmail.com">我</a>联系。也有部分内容系自己使用软件所得的一些经验，仅供参考。</p>
-<h2 id="ffmepg">FFmepg</h2>
-<h3 id="转视频为gif">转视频为gif</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ffmpeg -i input.mkv out.gif
-</code></pre></div><p>又：加速播放。假设原视频 60 fps，输出降到 30 fps，丢掉一半的帧。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ffmpeg -r <span style="color:#ae81ff">60</span> -i input.mkv -r <span style="color:#ae81ff">30</span> out.gif
-</code></pre></div><p>又：不想丢帧。将输入扩大一倍，输出保留原样。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ffmpeg -r <span style="color:#ae81ff">120</span> -i input.mkv -r <span style="color:#ae81ff">60</span> out.gif
-</code></pre></div><p>又：不想全转。从视频的第2秒开始，截取3秒转化为gif。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">## 从视频中第二秒开始，截取时长为3秒的片段转化为 gif</span>
-ffmpeg -t <span style="color:#ae81ff">3</span> -ss 00:00:02 -i input.mkv out-clip.gif
-</code></pre></div><p>又：控制转化质量。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">## 默认转化是中等质量模式，若要转化出高质量的 gif，可以修改比特率</span>
-ffmpeg -i input.mkv -b 2048k out.gif
-</code></pre></div><hr>
-<h2 id="imagemagick">ImageMagick</h2>
-<h3 id="图片转换">图片转换</h3>
-<p>转换图片为指定分辨率。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">convert -resize 1920x1080 src.jpg dst.jpg
-</code></pre></div><p>又：按百分比转换大小。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">convert -resize 50%x50% src.jpg dst.jpg
-</code></pre></div><p>又：忽略原始宽高比。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">convert -resize 300x300! src.jpg dst.jpg
-</code></pre></div><hr>
-<h2 id="shell">Shell</h2>
-<h3 id="行内操作">行内操作</h3>
-<ul>
-<li><code>^a</code>: jump to BOL</li>
-<li><code>^e</code>: jump to EOL</li>
-<li><code>^u</code>: delete the line</li>
-<li><code>^k</code>: delete to EOL</li>
-<li><code>^w</code>: delete a word forward</li>
-<li><code>alt+f</code>: jump a word forward</li>
-<li><code>alt+b</code>: jump a word backward</li>
-<li><code>^r</code>: search history</li>
-<li><code>alt+.</code>: complete second parameter</li>
-</ul>
-<h3 id="任务控制">任务控制</h3>
-<ol>
-<li>执行<code>command</code></li>
-<li>按<code>^z</code>挂起当前job</li>
-<li>按<code>bg</code>后台继续该job</li>
-<li>按<code>fg</code>召回前台</li>
-</ol>
-<h3 id="后台运行命令">后台运行命令</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">command &amp;
-</code></pre></div><p>或者如果你不想看到任何输出，使用</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">command &amp;&gt; /dev/null &amp;
-</code></pre></div><ul>
-<li>如此你可以继续使用当前shell</li>
-<li>使用<code>bg</code>查看是否有任务在后台运行</li>
-<li>使用<code>jobs</code>查看后台任务</li>
-<li>使用<code>fg</code>将任务召回前台</li>
-<li>不能退出shell，否则进程会被杀掉</li>
-<li><strong>使用<code>disown</code>丢掉进程，可以退出shell</strong></li>
-</ul>
-<p>又：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">nohup command &amp;&gt; /dev/null &amp;
-</code></pre></div><p>等价于以上的操作。单纯的<code>nohup command</code>会在当前目录创建一个隐藏文件以写入命令的输出。以上命令将程序的输出重定向至比特桶丢弃。</p>
-<h3 id="同时输出到console和文件">同时输出到console和文件</h3>
-<p>将命令输出重定向到文件：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">SomeCommand &gt; SomeFile.txt  <span style="color:#75715e"># overwrite</span>
-SomeCommand &gt;&gt; SomeFile.txt <span style="color:#75715e"># append</span>
-</code></pre></div><p>将命令输出(stdout)及报错(stderr)重定向到文件：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">SomeCommand &amp;&gt; SomeFile.txt
-SomeCommand &amp;&gt;&gt; SomeFile.txt
-</code></pre></div><p>同时输出到console和文件：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">SomeCommand 2&gt;&amp;<span style="color:#ae81ff">1</span> | tee SomeFile.txt     <span style="color:#75715e"># overwrite</span>
-SomeCommand 2&gt;&amp;<span style="color:#ae81ff">1</span> | tee -a SomeFile.txt  <span style="color:#75715e"># append</span>
-</code></pre></div><pre><code>          || visible in terminal ||   visible in file   || existing
+              \/__/                                                              \_/__/ &#39;`
+</code></pre><p>此页内容多为软件使用技巧，绝大部分内容来自互联网，如有侵权，请与<a href=mailto:guyueshui002@gmail.com>我</a>联系。也有部分内容系自己使用软件所得的一些经验，仅供参考。</p><h2 id=ffmepg>FFmepg</h2><h3 id=转视频为-gif>转视频为 gif</h3><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>ffmpeg -i input.mkv out.gif
+</span></span></code></pre></div><p>又：加速播放。假设原视频 60 fps，输出降到 30 fps，丢掉一半的帧。</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>ffmpeg -r <span style=color:#d19a66>60</span> -i input.mkv -r <span style=color:#d19a66>30</span> out.gif
+</span></span></code></pre></div><p>又：不想丢帧。将输入扩大一倍，输出保留原样。</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>ffmpeg -r <span style=color:#d19a66>120</span> -i input.mkv -r <span style=color:#d19a66>60</span> out.gif
+</span></span></code></pre></div><p>又：不想全转。从视频的第 2 秒开始，截取 3 秒转化为 gif。</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span><span style=color:#7f848e>## 从视频中第二秒开始，截取时长为 3 秒的片段转化为 gif</span>
+</span></span><span style=display:flex><span>ffmpeg -t <span style=color:#d19a66>3</span> -ss 00:00:02 -i input.mkv out-clip.gif
+</span></span></code></pre></div><p>又：控制转化质量。</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span><span style=color:#7f848e>## 默认转化是中等质量模式，若要转化出高质量的 gif，可以修改比特率</span>
+</span></span><span style=display:flex><span>ffmpeg -i input.mkv -b 2048k out.gif
+</span></span></code></pre></div><h3 id=vob-转-mp4>VOB 转 MP4</h3><p>cf. <a href=http://www.ruhuamtv.com/thread-9782-1-1.html>http://www.ruhuamtv.com/thread-9782-1-1.html</a></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>ffmpeg -i 源视频.vob -c:v libx264 -vf yadif -crf <span style=color:#d19a66>18</span> 目标视频.mp4
+</span></span></code></pre></div><p>又：合并 VOB 文件。</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>cat VTS_01_1.VOB VTS_01_2.VOB | ffmpeg -y -i - -fflags genpts -vcodec copy -acodec copy ../output.VOB
+</span></span></code></pre></div><p>又：合并 mp4 文件。
+see: <a href=https://www.tais3.com/others/983.html>https://www.tais3.com/others/983.html</a></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#7f848e>#! /bin/bash
+</span></span></span><span style=display:flex><span><span style=color:#7f848e></span><span style=color:#7f848e># 将 mp4 文件封装为 ts 格式</span>
+</span></span><span style=display:flex><span>ffmpeg -i a1.mp4 -vcodec copy -acodec copy -vbsf h264_mp4toannexb 1.ts
+</span></span><span style=display:flex><span>ffmpeg -i a2.mp4 -vcodec copy -acodec copy -vbsf h264_mp4toannexb 2.ts
+</span></span><span style=display:flex><span>ffmpeg -i a3.mp4 -vcodec copy -acodec copy -vbsf h264_mp4toannexb 3.ts
+</span></span><span style=display:flex><span>ffmpeg -i a4.mp4 -vcodec copy -acodec copy -vbsf h264_mp4toannexb 4.ts
+</span></span><span style=display:flex><span><span style=color:#7f848e># 拼接 ts 并导出最终 mp4 文件</span>
+</span></span><span style=display:flex><span>ffmpeg -i <span style=color:#98c379>&#34;concat:1.ts|2.ts|3.ts|4.ts&#34;</span> -acodec copy -vcodec copy -absf aac_adtstoasc output.mp4
+</span></span><span style=display:flex><span><span style=color:#7f848e># 删除过程中生成的 ts 文件</span>
+</span></span><span style=display:flex><span>rm *.ts
+</span></span></code></pre></div><p>参考：<a href=https://www.tais3.com/others/983.html>FFMPEG 合并视频文件（无损）</a></p><h3 id=ts-转-mp4>TS 转 MP4</h3><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>ffmpeg -y -i your_file.ts -vcodec copy -acodec copy -map 0:v -map 0:a your_file.mp4
+</span></span></code></pre></div><p>cf.</p><ol><li><a href="https://www.reddit.com/r/ffmpeg/comments/ggmjep/comment/fq2m1ux/?utm_source=share&amp;utm_medium=web2x&amp;context=3">https://www.reddit.com/r/ffmpeg/comments/ggmjep/comment/fq2m1ux/?utm_source=share&amp;utm_medium=web2x&amp;context=3</a></li><li><a href=https://askubuntu.com/a/716457>https://askubuntu.com/a/716457</a></li></ol><p>分辨率、码率、帧率相关介绍，及相关压缩方法：</p><ol><li><a href=https://blog.csdn.net/weixin_30536861/article/details/114496746>https://blog.csdn.net/weixin_30536861/article/details/114496746</a></li><li><a href=https://zhuanlan.zhihu.com/p/255042580>https://zhuanlan.zhihu.com/p/255042580</a></li></ol><p>写给新手的指令：https://gnu-linux.readthedocs.io/zh/latest/Chapter04/00_ffmpeg.basic.html</p><hr><h2 id=imagemagick>ImageMagick</h2><h3 id=图片转换>图片转换</h3><p>转换图片为指定分辨率。</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>convert -resize 1920x1080 src.jpg dst.jpg
+</span></span></code></pre></div><p>又：按百分比转换大小。</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>convert -resize 50%x50% src.jpg dst.jpg
+</span></span></code></pre></div><p>又：忽略原始宽高比。</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>convert -resize 300x300! src.jpg dst.jpg
+</span></span></code></pre></div><p>又：多张图片合成 gif。</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>magick DSC_52<span style=color:#56b6c2>{</span>01..09<span style=color:#56b6c2>}</span>.JPG out.gif
+</span></span><span style=display:flex><span>magick -delay <span style=color:#d19a66>10</span> *.jpg out.gif  <span style=color:#7f848e># 指定每张持续 10ms</span>
+</span></span></code></pre></div><p>又：更改分辨率。</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>mogrify -resize 50%x50% *.jpg  <span style=color:#7f848e># 所有 jpg 缩放至 50%，不加百分号默认单位 px（像素）</span>
+</span></span></code></pre></div><p>又，裁切 gif。</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#7f848e>#</span>
+</span></span><span style=display:flex><span>magick c.gif -coalesce -repage 0x0 -crop 600x600+175+0 +repage output.gif
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>convert input.gif -coalesce -repage 0x0 -crop WxH+X+Y +repage output.gif
+</span></span></code></pre></div><ul><li>Animated gifs are often optimised to save space, but imagemagick doesn&rsquo;t seem to consider this when applying the crop command and treats each frame individually. -coalesce rebuilds the full frames.</li><li>Other commands will take into consideration the offset information supplied in the original gif, so you need to force that to be reset with -repage 0x0.</li><li>The crop itself is straightforward, with width, height, x offset and y offset supplied respectively. For example, a crop 40 wide and 30 high at an x offset of 50 = 40x30+50+0.</li><li>Crop does not remove the canvas that it snipped from the image. Applying +repage after the crop will do this.</li></ul><p>cf. <a href=https://stackoverflow.com/a/14036766>https://stackoverflow.com/a/14036766</a></p><hr><h2 id=shell>Shell</h2><h3 id=行内操作>行内操作</h3><ul><li><code>^a</code>: jump to BOL</li><li><code>^e</code>: jump to EOL</li><li><code>^u</code>: delete the line</li><li><code>^k</code>: delete to EOL</li><li><code>^w</code>: delete a word forward</li><li><code>alt+f</code>: jump a word forward</li><li><code>alt+b</code>: jump a word backward</li><li><code>^r</code>: search history</li><li><code>alt+.</code>: complete second parameter</li></ul><h3 id=任务控制>任务控制</h3><ol><li>执行<code>command</code></li><li>按<code>^z</code>挂起当前 job</li><li>按<code>bg</code>后台继续该 job</li><li>按<code>fg</code>召回前台</li></ol><h3 id=后台运行命令>后台运行命令</h3><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span><span style=color:#e5c07b>command</span> &amp;
+</span></span></code></pre></div><p>或者如果你不想看到任何输出，使用</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span><span style=color:#e5c07b>command</span> &amp;&gt; /dev/null &amp;
+</span></span></code></pre></div><ul><li>如此你可以继续使用当前 shell</li><li>使用<code>bg</code>查看是否有任务在后台运行</li><li>使用<code>jobs</code>查看后台任务</li><li>使用<code>fg</code>将任务召回前台</li><li>不能退出 shell，否则进程会被杀掉</li><li><strong>使用<code>disown</code>丢掉进程，可以退出 shell</strong></li></ul><p>又：</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>nohup <span style=color:#e5c07b>command</span> &amp;&gt; /dev/null &amp;
+</span></span></code></pre></div><p>等价于以上的操作。单纯的<code>nohup command</code>会在当前目录创建一个隐藏文件以写入命令的输出。以上命令将程序的输出重定向至比特桶丢弃。</p><h3 id=同时输出到-console-和文件>同时输出到 console 和文件</h3><p>将命令输出重定向到文件：</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>SomeCommand &gt; SomeFile.txt  <span style=color:#7f848e># overwrite</span>
+</span></span><span style=display:flex><span>SomeCommand &gt;&gt; SomeFile.txt <span style=color:#7f848e># append</span>
+</span></span></code></pre></div><p>将命令输出 (stdout) 及报错 (stderr) 重定向到文件：</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>SomeCommand &amp;&gt; SomeFile.txt
+</span></span><span style=display:flex><span>SomeCommand &amp;&gt;&gt; SomeFile.txt
+</span></span></code></pre></div><p>同时输出到 console 和文件：</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>SomeCommand 2&gt;&amp;<span style=color:#d19a66>1</span> | tee SomeFile.txt     <span style=color:#7f848e># overwrite</span>
+</span></span><span style=display:flex><span>SomeCommand 2&gt;&amp;<span style=color:#d19a66>1</span> | tee -a SomeFile.txt  <span style=color:#7f848e># append</span>
+</span></span></code></pre></div><pre tabindex=0><code>          || visible in terminal ||   visible in file   || existing
   Syntax  ||  StdOut  |  StdErr  ||  StdOut  |  StdErr  ||   file
 ==========++==========+==========++==========+==========++===========
     &gt;     ||    no    |   yes    ||   yes    |    no    || overwrite
@@ -1426,331 +84,269 @@ SomeCommand 2&gt;&amp;<span style="color:#ae81ff">1</span> | tee -a SomeFile.txt
           ||          |          ||          |          ||
 |&amp; tee    ||   yes    |   yes    ||   yes    |   yes    || overwrite
 |&amp; tee -a ||   yes    |   yes    ||   yes    |   yes    ||  append
-</code></pre><p>Ref:</p>
-<ol>
-<li><a href="https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file">https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file</a></li>
-<li><a href="https://www.gnu.org/software/bash/manual/bash.html#Redirections">https://www.gnu.org/software/bash/manual/bash.html#Redirections</a></li>
-</ol>
-<h3 id="从系统中踢出某个用户">从系统中踢出某个用户</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># See the pid of the user&#39;s login process.</span>
-$ who -u
-yychi    tty1         2020-02-19 21:06  旧        <span style="color:#ae81ff">460</span>
-
-<span style="color:#75715e"># Let him know he will be kick off.</span>
-$ echo <span style="color:#e6db74">&#34;You&#39;ll be kick off by system administrator.&#34;</span> | write yychi
-
-<span style="color:#75715e"># Kick off.</span>
-$ kill -9 <span style="color:#ae81ff">460</span>
-
-<span style="color:#75715e"># Done.</span>
-</code></pre></div><p>Ref: <a href="https://www.putorius.net/kick-user-off-linux-system.html">https://www.putorius.net/kick-user-off-linux-system.html</a></p>
-<hr>
-<h2 id="command-find">Command <code>find</code></h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ find --help
-Usage: find <span style="color:#f92672">[</span>-H<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-L<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-P<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-Olevel<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-D help|tree|search|stat|rates|opt|exec<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>path...<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expression<span style="color:#f92672">]</span>
-</code></pre></div><p>前面的选项不常用，初级使用只需掌握</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find <span style="color:#f92672">[</span>path...<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expression<span style="color:#f92672">]</span>
-</code></pre></div><ul>
-<li><code>path</code> - search path</li>
-<li><code>expression</code> - expands to <code>-options [-print -exec -ok]</code>
-<ul>
-<li><code>-options</code>: 指定find常用选项</li>
-<li><code>-print</code>: 将匹配到的文件写入标准输出[默认]</li>
-<li><code>-exec</code>: 在匹配到的文件上执行一串命令。格式为<code>&lt;command&gt; {} \;</code>，注意 {} 和 ; 之间的空格。
-<ul>
-<li><code>find . -size 0 -exec rm {} \;</code> - 删除当前目录下size为0的文件</li>
-<li><code>rm -i $(find . -size 0)</code> - 同上</li>
-<li><code>find . -size 0 | xargs rm -f &amp;</code> - 同上</li>
-</ul>
-</li>
-<li><code>-ok</code>: 同上，执行命令前会询问</li>
-</ul>
-</li>
-</ul>
-<p><strong>常用选项</strong></p>
-<ul>
-<li>name - 按照文件名查找
-<ul>
-<li><code>find &lt;dir&gt; -name &quot;*.cpp&quot;</code>: 在目录dir下查找后缀为cpp的文件</li>
-</ul>
-</li>
-<li>perm - 按照文件权限查找</li>
-<li>user - 按照文件所有者查找</li>
-<li>group - 按照文件所有组查找</li>
-<li>type - 按照文件类型查找</li>
-<li>size - 按照文件大小查找</li>
-<li>&hellip;</li>
-</ul>
-<p><strong>几个例子</strong></p>
-<ul>
-<li><code>find . -name &quot;*name*&quot;</code> - 找出当前文件夹文件名包含“name”的文件</li>
-<li><code>find . ! -type d -print</code> - 在当前目录查找非目录文件</li>
-<li><code>find . -newer file1 ! file2</code> - 查找比file1新但比file2旧的文件</li>
-<li><code>find -type d -empty | xargs -n 1 rmdir</code> - 批量删除当前目录下的空文件夹</li>
-</ul>
-<hr>
-<h2 id="command-grep">Command <code>grep</code></h2>
-<hr>
-<h2 id="command-sed">Command <code>sed</code></h2>
-<hr>
-<h2 id="git">Git</h2>
-<p><strong>创建别名</strong></p>
-<p>使用 <code>git log</code> 查看提交历史，但是输出冗杂。通常使用</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git log --oneline --abbrev-commit --all --graph --decoreate --color
-</code></pre></div><p>来获得更美观易读的输出。但是每次输入这么多肯定很烦人，使用</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git config --global alias.graph <span style="color:#e6db74">&#34;log --graph --oneline --decorate=short&#34;</span>
-</code></pre></div><p>增加一个全局别名，这个别名对于任何地方的 <code>git</code> 都适用。如此一来，键入 <code>git graph</code> 会等效于</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git log --graph --oneline --decorate<span style="color:#f92672">=</span>short
-</code></pre></div><p>样例输出：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ git graph
-
-* 36f2d65 <span style="color:#f92672">(</span>HEAD -&gt; master, origin/master, origin/HEAD<span style="color:#f92672">)</span> Forget it
-* 9b4a6d7 Update ref list
-* 3931d4d Using relative path <span style="color:#66d9ef">for</span> image
-* ba18821 Upload pics
-* ceca69a fixed reference
-* be15df2 fixed picture address
-* 97a36f3 Initial commit
-</code></pre></div><p><strong>忽略已经添加的文件</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git rm --cached &lt;somefiles&gt;
-</code></pre></div><p><strong>推送本地分支到远程</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 远程分支如果不存在，则自动创建。</span>
-git push origin &lt;local_brach&gt;:&lt;remote_branch&gt;
-</code></pre></div><p><strong>拉取远程分支到本地</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 从远程分支切换（并创建，如果不存在）本地分支</span>
-git checkout -b &lt;local_branch&gt; origin/&lt;remote_branch&gt;
-
-<span style="color:#75715e"># 另：取回远程分支并创建对应的本地分支，不换自动切换到该分支</span>
-git fetch origin &lt;remote_brach&gt;:&lt;local_branch&gt;
-</code></pre></div><p><strong>删除commit历史</strong></p>
-<p>如果不小心将隐私信息推送至远程仓库（如github），那么仅仅删除再更新再推送到远程仓库覆盖是不够的，别人还是可以通过你的commit历史查到你所做的更改，所以这种情况下必须删除之前所有的commit history. 大致思路是创建一个孤立分支，然后重新添加文件，再删除master分支，将新建的分支重命名为master，再推送到远程强制覆盖<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Check out to a temporary branch:</span>
-git checkout --orphan TEMP_BRANCH
-
-<span style="color:#75715e"># Add all the files:</span>
-git add -A
-
-<span style="color:#75715e"># Commit the changes:</span>
-git commit -am <span style="color:#e6db74">&#34;Initial commit&#34;</span>
-
-<span style="color:#75715e"># Delete the old branch:</span>
-git branch -D master
-
-<span style="color:#75715e"># Rename the temporary branch to master:</span>
-git branch -m master
-
-<span style="color:#75715e"># Finally, force update to our repository:</span>
-git push -f origin master
-</code></pre></div><p><strong>合并某个文件到当前分支</strong></p>
-<p>例如当前在master分支，希望合并某个分支dev的某个或多个文件到当前分支：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git checkout dev file1 file2 ...
-</code></pre></div><p>但是上述做法会强行覆盖当前分支的文件，没有冲突处理，更安全的做法是先从当前分支新建分支master_temp，然后在master_temp中checkout，最后再将master_temp分支merge到master分支：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Create a branch based on master</span>
-git checkout -b master_temp
-
-<span style="color:#75715e"># Chechkout file1 from dev to master_temp</span>
-git checkout dev file1
-git commit -m <span style="color:#e6db74">&#34;checkout file1 from dev&#34;</span>
-
-<span style="color:#75715e"># Switch to master and merge, then delete</span>
-git checkout master
-git merge master_temp
-git branch -d master_temp
-</code></pre></div><p>Ref: <a href="https://segmentfault.com/a/1190000008360855">https://segmentfault.com/a/1190000008360855</a></p>
-<h2 id="command-g">Command <code>g++</code></h2>
-<p>自定义包含路径</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">g++ main.cpp -I/usr/local/include
-</code></pre></div><p>自定义链接静态或动态库</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">g++ main.cpp -L/path/to/lib_file
-g++ main.cpp -L/usr/lib64 -lcurl -lssl
-</code></pre></div><p>上面第二个命令链接了<code>/usr/lib64/</code>目录下的<code>libcurl.so</code>和<code>libssl.so</code>两个动态库文件。静态库也是同样链接。说起来静态库，想起了最近折腾的一个东西，你可能会想把多个静态库合成一个静态库，想当然的直接用<code>ar</code>合并，但是不行，必须要把两个静态库全解压出来，再合并所有的object file. 参见：<a href="https://www.cnblogs.com/fnlingnzb-learner/p/8127456.html">here</a></p>
-<p>生成机器码</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">g++ main.cpp -c
-</code></pre></div><p>生成汇编代码</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">g++ main.cpp -S
-</code></pre></div><p>仅预编译</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">g++ main.cpp -E &gt; main.i
-</code></pre></div><hr>
-<h2 id="aria2c">Aria2c</h2>
-<p><a href="https://aria2.github.io/">aria2c</a> 是个好东西。支持连接，磁力，种子下载。轻量且强大，可直接使用，也可作为服务端，配合WebUI使用。</p>
-<ul>
-<li>配置：参考 <a href="https://binux.blog/2012/12/aria2-examples/">aria2配置示例</a></li>
-<li>WebUI:
-<ul>
-<li><a href="http://binux.github.io/yaaw/demo/">YAAW</a></li>
-<li><a href="https://ziahamza.github.io/webui-aria2/#">ziahamza</a></li>
-<li><a href="http://ariang.mayswind.net/latest/">AriaNg</a></li>
-</ul>
-</li>
-</ul>
-<p>Note: jsonrpc 地址格式为 <code>http://token:&lt;rpc-secret&gt;@hostname:port/jsonrpc</code>
+</code></pre><p>Ref:</p><ol><li><a href=https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file>https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file</a></li><li><a href=https://www.gnu.org/software/bash/manual/bash.html#Redirections>https://www.gnu.org/software/bash/manual/bash.html#Redirections</a></li></ol><h3 id=从系统中踢出某个用户>从系统中踢出某个用户</h3><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#7f848e># See the pid of the user&#39;s login process.</span>
+</span></span><span style=display:flex><span>$ who -u
+</span></span><span style=display:flex><span>yychi    tty1         2020-02-19 21:06  旧        <span style=color:#d19a66>460</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># Let him know he will be kick off.</span>
+</span></span><span style=display:flex><span>$ <span style=color:#e5c07b>echo</span> <span style=color:#98c379>&#34;You&#39;ll be kick off by system administrator.&#34;</span> | write yychi
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># Kick off.</span>
+</span></span><span style=display:flex><span>$ <span style=color:#e5c07b>kill</span> -9 <span style=color:#d19a66>460</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># Done.</span>
+</span></span></code></pre></div><p>Ref: <a href=https://www.putorius.net/kick-user-off-linux-system.html>https://www.putorius.net/kick-user-off-linux-system.html</a></p><hr><h2 id=command-find>Command <code>find</code></h2><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ find --help
+</span></span><span style=display:flex><span>Usage: find <span style=color:#56b6c2>[</span>-H<span style=color:#56b6c2>]</span> <span style=color:#56b6c2>[</span>-L<span style=color:#56b6c2>]</span> <span style=color:#56b6c2>[</span>-P<span style=color:#56b6c2>]</span> <span style=color:#56b6c2>[</span>-Olevel<span style=color:#56b6c2>]</span> <span style=color:#56b6c2>[</span>-D help|tree|search|stat|rates|opt|exec<span style=color:#56b6c2>]</span> <span style=color:#56b6c2>[</span>path...<span style=color:#56b6c2>]</span> <span style=color:#56b6c2>[</span>expression<span style=color:#56b6c2>]</span>
+</span></span></code></pre></div><p>前面的选项不常用，初级使用只需掌握</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>find <span style=color:#56b6c2>[</span>path...<span style=color:#56b6c2>]</span> <span style=color:#56b6c2>[</span>expression<span style=color:#56b6c2>]</span>
+</span></span></code></pre></div><ul><li><code>path</code> - search path</li><li><code>expression</code> - expands to <code>-options [-print -exec -ok]</code><ul><li><code>-options</code>: 指定 find 常用选项</li><li><code>-print</code>: 将匹配到的文件写入标准输出 [默认]</li><li><code>-exec</code>: 在匹配到的文件上执行一串命令。格式为<code>&lt;command> {} \;</code>，注意 {} 和 ; 之间的空格。<ul><li><code>find . -size 0 -exec rm {} \;</code> - 删除当前目录下 size 为 0 的文件</li><li><code>rm -i $(find . -size 0)</code> - 同上</li><li><code>find . -size 0 | xargs rm -f &</code> - 同上</li></ul></li><li><code>-ok</code>: 同上，执行命令前会询问</li></ul></li></ul><p><strong>常用选项</strong></p><ul><li>name - 按照文件名查找<ul><li><code>find &lt;dir> -name "*.cpp"</code>: 在目录 dir 下查找后缀为 cpp 的文件</li><li><code>-name</code>默认不支持正则表达式，顶多支持通配符<code>*</code></li></ul></li><li>perm - 按照文件权限查找</li><li>user - 按照文件所有者查找</li><li>group - 按照文件所有组查找</li><li>type - 按照文件类型查找</li><li>size - 按照文件大小查找</li><li>&mldr;</li></ul><p><strong>正则表达式</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>find path -regex <span style=color:#98c379>&#34;&lt;regex&gt;&#34;</span>
+</span></span></code></pre></div><p>但是默认的正则表达式引擎我也不知道是啥，反正不解析我习惯的那种正则语法。故使用：</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>find . -regextype posix-extended -regex <span style=color:#98c379>&#34;.*\.(log|aux|blg)&#34;</span>
+</span></span></code></pre></div><p>上述命令找出当前文件夹及子文件夹所有后缀名为<code>log</code>,<code>aux</code>,<code>blg</code>的文件。</p><p><strong>几个例子</strong></p><ul><li><code>find . -name "*name*"</code> - 找出当前文件夹文件名包含“name”的文件</li><li><code>find . ! -type d -print</code> - 在当前目录查找非目录文件</li><li><code>find . -newer file1 ! file2</code> - 查找比 file1 新但比 file2 旧的文件</li><li><code>find -type d -empty | xargs -n 1 rmdir</code> - 批量删除当前目录下的空文件夹</li><li><code>find -tyle l -exec ls -l {} +</code> - 找出当前文件夹下损坏的软连接</li></ul><hr><h2 id=command-grep>Command <code>grep</code></h2><p>最基本用法：</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#7f848e># 查找 somefile 中匹配到 something 的行</span>
+</span></span><span style=display:flex><span>$ grep <span style=color:#98c379>&#34;something&#34;</span> somefile
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># 定位 something 所在的行并将接下来的 3 行一并输出</span>
+</span></span><span style=display:flex><span>$ grep <span style=color:#98c379>&#34;something&#34;</span> somefile -A <span style=color:#d19a66>3</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># 定位 something 所在的行并将之前的 3 行一并输出</span>
+</span></span><span style=display:flex><span>$ grep <span style=color:#98c379>&#34;something&#34;</span> somefile -B <span style=color:#d19a66>3</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># 定位 something 所在的行并将上下 3 行一并输出</span>
+</span></span><span style=display:flex><span>$ grep <span style=color:#98c379>&#34;something&#34;</span> somefile -C <span style=color:#d19a66>3</span>
+</span></span></code></pre></div><p><strong>使用正则表达式</strong></p><p><code>grep</code>支持三种正则：basic (BRE), extend (ERE), perl (PCRE). 不同的<code>grep</code>实现方式不同，详见手册。一般 extend 最为常用，语法为</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#7f848e># 在 somefile 中查找包含 his 或者 her 的行</span>
+</span></span><span style=display:flex><span>$ grep -E <span style=color:#98c379>&#34;his|her&#34;</span> somefile
+</span></span></code></pre></div><p>Ref:</p><ul><li><a href=https://linux.cn/article-6941-1.html>grep 命令系列：grep 中的正则表达式</a></li></ul><hr><h2 id=command-xargs>Command <code>xargs</code></h2><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ whatis xargs
+</span></span><span style=display:flex><span>xargs <span style=color:#56b6c2>(</span>1<span style=color:#56b6c2>)</span>            - build and execute <span style=color:#e5c07b>command</span> lines from standard input
+</span></span></code></pre></div><p>Ref:</p><ul><li><a href=http://c.biancheng.net/linux/xargs.html>xargs 命令：一个给其他命令传递参数的过滤器</a></li></ul><hr><h2 id=command-sed>Command <code>sed</code></h2><hr><h2 id=command-cut>Command <code>cut</code></h2><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ whatis cut
+</span></span><span style=display:flex><span>cut <span style=color:#56b6c2>(</span>1<span style=color:#56b6c2>)</span>              - remove sections from each line of files
+</span></span></code></pre></div><p>基本用法：</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#7f848e># 以：为分隔符分割每行，并选择第 1,2,4 列输出</span>
+</span></span><span style=display:flex><span>$ cut -d: -f1,2,4 /etc/passwd
+</span></span><span style=display:flex><span>root:x:0
+</span></span><span style=display:flex><span>bin:x:1
+</span></span><span style=display:flex><span>daemon:x:2
+</span></span><span style=display:flex><span>mail:x:12
+</span></span><span style=display:flex><span>ftp:x:11
+</span></span><span style=display:flex><span>http:x:33
+</span></span><span style=display:flex><span>nobody:x:65534
+</span></span><span style=display:flex><span>dbus:x:81
+</span></span></code></pre></div><hr><h2 id=git>Git</h2><p><strong>创建别名</strong></p><p>使用 <code>git log</code> 查看提交历史，但是输出冗杂。通常使用</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>git log --oneline --abbrev-commit --all --graph --decoreate --color
+</span></span></code></pre></div><p>来获得更美观易读的输出。但是每次输入这么多肯定很烦人，使用</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>git config --global alias.graph <span style=color:#98c379>&#34;log --graph --oneline --decorate=short&#34;</span>
+</span></span></code></pre></div><p>增加一个全局别名，这个别名对于任何地方的 <code>git</code> 都适用。如此一来，键入 <code>git graph</code> 会等效于</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git log --graph --oneline --decorate<span style=color:#56b6c2>=</span>short
+</span></span></code></pre></div><p>样例输出：</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>$ git graph
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>* 36f2d65 <span style=color:#56b6c2>(</span>HEAD -&gt; master, origin/master, origin/HEAD<span style=color:#56b6c2>)</span> Forget it
+</span></span><span style=display:flex><span>* 9b4a6d7 Update ref list
+</span></span><span style=display:flex><span>* 3931d4d Using relative path <span style=color:#c678dd>for</span> image
+</span></span><span style=display:flex><span>* ba18821 Upload pics
+</span></span><span style=display:flex><span>* ceca69a fixed reference
+</span></span><span style=display:flex><span>* be15df2 fixed picture address
+</span></span><span style=display:flex><span>* 97a36f3 Initial commit
+</span></span></code></pre></div><p><strong>忽略已经添加的文件</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git rm --cached &lt;somefiles&gt;
+</span></span></code></pre></div><p><strong>推送本地分支到远程</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#7f848e># 远程分支如果不存在，则自动创建。</span>
+</span></span><span style=display:flex><span>git push origin &lt;local_brach&gt;:&lt;remote_branch&gt;
+</span></span></code></pre></div><p><strong>拉取远程分支到本地</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#7f848e># 从远程分支切换（并创建，如果不存在）本地分支</span>
+</span></span><span style=display:flex><span>git checkout -b &lt;local_branch&gt; origin/&lt;remote_branch&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># 另：取回远程分支并创建对应的本地分支，不换自动切换到该分支</span>
+</span></span><span style=display:flex><span>git fetch origin &lt;remote_brach&gt;:&lt;local_branch&gt;
+</span></span></code></pre></div><p><strong>删除 commit 历史</strong></p><p>如果不小心将隐私信息推送至远程仓库（如 github），那么仅仅删除再更新再推送到远程仓库覆盖是不够的，别人还是可以通过你的 commit 历史查到你所做的更改，所以这种情况下必须删除之前所有的 commit history. 大致思路是创建一个孤立分支，然后重新添加文件，再删除 master 分支，将新建的分支重命名为 master，再推送到远程强制覆盖 <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>。</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#7f848e># Check out to a temporary branch:</span>
+</span></span><span style=display:flex><span>git checkout --orphan TEMP_BRANCH
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># Add all the files:</span>
+</span></span><span style=display:flex><span>git add -A
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># Commit the changes:</span>
+</span></span><span style=display:flex><span>git commit -am <span style=color:#98c379>&#34;Initial commit&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># Delete the old branch:</span>
+</span></span><span style=display:flex><span>git branch -D master
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># Rename the temporary branch to master:</span>
+</span></span><span style=display:flex><span>git branch -m master
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># Finally, force update to our repository:</span>
+</span></span><span style=display:flex><span>git push -f origin master
+</span></span></code></pre></div><p><strong>合并某个文件到当前分支</strong></p><p>例如当前在 master 分支，希望合并某个分支 dev 的某个或多个文件到当前分支：</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git checkout dev file1 file2 ...
+</span></span></code></pre></div><p>但是上述做法会强行覆盖当前分支的文件，没有冲突处理，更安全的做法是先从当前分支新建分支 master_temp，然后在 master_temp 中 checkout，最后再将 master_temp 分支 merge 到 master 分支：</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#7f848e># Create a branch based on master</span>
+</span></span><span style=display:flex><span>git checkout -b master_temp
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># Chechkout file1 from dev to master_temp</span>
+</span></span><span style=display:flex><span>git checkout dev file1
+</span></span><span style=display:flex><span>git commit -m <span style=color:#98c379>&#34;checkout file1 from dev&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># Switch to master and merge, then delete</span>
+</span></span><span style=display:flex><span>git checkout master
+</span></span><span style=display:flex><span>git merge master_temp
+</span></span><span style=display:flex><span>git branch -d master_temp
+</span></span></code></pre></div><p>Ref: <a href=https://segmentfault.com/a/1190000008360855>https://segmentfault.com/a/1190000008360855</a></p><p><strong>Git merge</strong></p><p>当你觉得很多时候对于一个命令的很多子命令或者选项不是很清晰，而且查了忘，忘了查，那多半是你不理解它的工作机制。或者说它对你来说不是那么自然易懂，这个时候就需要深入以下，了解以下它的基本原理，帮助自己理解，以便记忆。</p><p><code>git merge</code>就是如此，你要知道 merge 的含义是什么？它其实就是在被 merge 的分支上重现要 merge 的 commits. 比如说：</p><pre tabindex=0><code>a---b---c---d---e (master)
+    \
+     `--A---B---C (dev)
+</code></pre><p>你当前在 master 分支的 e 节点，你要 merge dev 分支。其实就是将 A、B、C 三个 commit 在 master 分支上重现，仿佛 master 分支上曾经也做过这些改动。那么冲突的来源就是你在两个分支中，对同一个文件作了不同的改动，如何解决不言而喻。</p><p>小朋友，你是否有很多？</p><p>Q: 我想只重现 B 节点怎么办？
+A: <code>git checkout master && git cherry-pick 62ecb3</code>，这里<code>62ecb3</code>是节点 B 的 commit 标识。</p><p>Q: 我想重现 A-B，但不要 C 怎么办？
+A: <code>git checkout -b newbranch 62ecb3 && git rebase --onto master 76cada^</code>，这里<code>76cada</code>是 A 节点的 commit 标识。先基于 B 创建一个分支，这个分支包含了 A 节点的改动，然后 rebase 到 master 上去，结果就是 A 和 B 重现在 master 分支上。</p><p>Ref:</p><ol><li><a href=https://stackoverflow.com/questions/161813/how-to-resolve-merge-conflicts-in-git>https://stackoverflow.com/questions/161813/how-to-resolve-merge-conflicts-in-git</a></li><li><a href=https://www.devroom.io/2010/06/10/cherry-picking-specific-commits-from-another-branch/>Cherry-Picking specific commits from another branch</a></li></ol><p><strong>Fork 之后如何同步 fork 源的更新</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#7f848e># see remote status</span>
+</span></span><span style=display:flex><span>git remote -v
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># add upstream if not exist one</span>
+</span></span><span style=display:flex><span>git remote add upstream https://github.com/&lt;origin_owner&gt;/&lt;origin_repo&gt;.git
+</span></span><span style=display:flex><span>git remote -v
+</span></span></code></pre></div><p>从上游仓库 fetch 分支和提交点，提交给本地 master，并会被存储在一个本地分支 upstream/master</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git fetch upstream
+</span></span></code></pre></div><p>切换到任意分支，merge 已经 fetch 的分支即可：</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git checkout somebrach
+</span></span><span style=display:flex><span>git merge upstream/master
+</span></span></code></pre></div><p>see: <a href=https://www.zhihu.com/question/28676261>https://www.zhihu.com/question/28676261</a></p><p>Ref:</p><ol><li><a href=https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork>Configureing a remote for a fork</a></li><li><a href=https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork>Syncing a fork</a></li></ol><p><strong>从另一个分支检出某个文件并重命名</strong></p><p>有时候开了一个孤立分支，但是想参考其他分支的代码，而当前分支又有同名文件，此时就需要从其他分支检出文件并重命名。</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#7f848e># show the content of a.cpp in specific commit HEAD^</span>
+</span></span><span style=display:flex><span>git show HEAD^:a.cpp
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># that&#39;s done</span>
+</span></span><span style=display:flex><span>git show HEAD^:a.cpp &gt; b.cpp
+</span></span></code></pre></div><p>Ref: search &ldquo;git-checkout older revision of a file under a new name&rdquo; in stack overflow</p><p><strong>查看已被跟踪的文件</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git ls-files
+</span></span></code></pre></div><p>Ref: search &ldquo;how can i make git show a list of the files that are being tracked&rdquo; in stack overflow</p><p><strong>submodule</strong></p><p>git submodule 本质上是指向一个其他仓库的链接，默认 clone 不会将 submodule 对应的仓库克隆下来。</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#7f848e># help</span>
+</span></span><span style=display:flex><span>git submodule --help
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># 添加 submodule</span>
+</span></span><span style=display:flex><span><span style=color:#7f848e>#   1. 进入目标子文件夹</span>
+</span></span><span style=display:flex><span>git submodule add https://github.com/imtianx/liba.git
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># 更新 submodule</span>
+</span></span><span style=display:flex><span><span style=color:#e5c07b>cd</span> xxx
+</span></span><span style=display:flex><span>git pull
+</span></span><span style=display:flex><span>git submodule update --recursive
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># 在主目录下更新 submodule liba</span>
+</span></span><span style=display:flex><span>git submodule update --remote liba
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># 删除 submodule</span>
+</span></span><span style=display:flex><span>vim .gitmodules <span style=color:#7f848e># 删除相应条目</span>
+</span></span><span style=display:flex><span>vim .git/config <span style=color:#7f848e># 删除相应条目</span>
+</span></span><span style=display:flex><span>rm -rf .git/modules/liba <span style=color:#7f848e># 删除对应的 git 文件夹</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># 在克隆时连同 submodule 一并克隆</span>
+</span></span><span style=display:flex><span>git clone https://github.com/imtianx/MainProject.git --recursive
+</span></span><span style=display:flex><span><span style=color:#7f848e># is equivalent to</span>
+</span></span><span style=display:flex><span>git clone https://github.com/imtianx/MainProject.git
+</span></span><span style=display:flex><span>git submodule init
+</span></span><span style=display:flex><span>git submodule update
+</span></span></code></pre></div><p>一般地，当某仓库中包含 submodule ./dir1 时，如果你只提交了 dir1 的内容，那么当前仓库是不会用上最新版本的 dir1 的。这在远程仓库中尤为显著。我的博客文件夹 BlogHugo 中包含了 themes/even 的 submodule, 每当我在 even 中改完样式推送到远端后（这里我 BlogHugo 仓库没有任何修改），发现 build 出来的网站压根没有使用最新的 submodule 里面的内容。究其原因，其实是父仓库默认会跟踪 submodule 的一个版本号。如果不在父仓库中显示更新要跟踪的版本号，则父仓库一直会跟踪之前的版本号。这是合理的，因为父子仓库独立开发，为了避免子仓库（submodule）的频繁提交对父仓库的构建产生影响，所以默认会跟踪一个版本号。</p><p>正确的做法是，当 submodule 更新后，父仓库中 submodule 的版本号会产生一个修改，在父仓库中 add-commit 这个修改，就可以更新父仓库中引用的 submodule 版本号。</p><p>Ref:</p><ol><li><a href=https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97>Git-工具 - 子模块</a></li><li><a href=https://juejin.im/post/6844903572950401038>Git 子模块：git submodule</a></li></ol><p><strong>如何撤销本地 commit</strong></p><p>有时候本地 add 了一写 diff，随手 commit 了，接着又有些 diff 可以共用这个 commit，就想撤销刚刚的 commit，把所有的 diff 合并在一起作为一次 commit。</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#7f848e># for more info, type git reset -h</span>
+</span></span><span style=display:flex><span>git reset --soft &lt;commit_id&gt;
+</span></span></code></pre></div><p><strong>修改已提交的 commit message</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#7f848e># commit_id 至少比要修改的那个 commit 早一个版本</span>
+</span></span><span style=display:flex><span>git rebase -i &lt;commit_id&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># 列出 rebase 的 commit 列表，不包含 &lt;commit id&gt;</span>
+</span></span><span style=display:flex><span>$ git rebase -i &lt;commit id&gt;
+</span></span><span style=display:flex><span><span style=color:#7f848e># 最近 3 条</span>
+</span></span><span style=display:flex><span>$ git rebase -i HEAD~3
+</span></span><span style=display:flex><span><span style=color:#7f848e># 本地仓库没 push 到远程仓库的 commit 信息</span>
+</span></span><span style=display:flex><span>$ git rebase -i
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># vi 下，找到需要修改的 commit 记录，`pick` 修改为 `edit` 或 `e`，`:wq` 保存退出</span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># 或者较新版本的 `reword`</span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># 重复执行如下命令直到完成</span>
+</span></span><span style=display:flex><span>$ git commit --amend --message<span style=color:#56b6c2>=</span><span style=color:#98c379>&#34;modify message by daodaotest&#34;</span> --author<span style=color:#56b6c2>=</span><span style=color:#98c379>&#34;jiangliheng &lt;jiang_liheng@163.com&gt;&#34;</span>
+</span></span><span style=display:flex><span>$ git rebase --continue
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># 中间也可跳过或退出 rebase 模式</span>
+</span></span><span style=display:flex><span>$ git rebase --skip
+</span></span><span style=display:flex><span>$ git rebase --abort
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># 如果只是更改 last commit</span>
+</span></span><span style=display:flex><span>git commit --amend
+</span></span></code></pre></div><p>Cf. <a href=https://docs.github.com/zh/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/changing-a-commit-message>github doc</a>.</p><p><strong>Git rebase</strong></p><p>Cf. <a href=https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase>https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase</a></p><p><code>rebase</code>和<code>merge</code>都是将另一分支的提交（commit）集成到当前分支的方法。而 merge 会保留两条分支的所有 commit，然后解决冲突，然后形成一个 merge commit，从 git log 上来看，原本线性的提交历史分了叉，然后又合了并。而 rebase 则是基于当前分支的某次提交去重现另一个分支，rebase 之后依然能够保留提交历史的线性状态。</p><pre tabindex=0><code>a---b---c---d---e (master)
+    \
+     `--A---B---C (dev)
+</code></pre><blockquote><p>From a content perspective, rebasing is changing the base of your branch from one commit to another making it appear as if you&rsquo;d created your branch from a different commit. Internally, Git accomplishes this by creating new commits and applying them to the specified base. It&rsquo;s very important to understand that even though the branch looks the same, it&rsquo;s composed of entirely new commits.</p><p>The primary reason for rebasing is to maintain a linear project history. For example, consi der a situation where the main branch has progressed since you started working on a feature branch. You want to get the latest updates to the main branch in your feature branch, but you want to keep your branch&rsquo;s history clean so it appears as if you&rsquo;ve been working off the latest main branch.</p><p>You have two options for integrating your feature into the main branch: merging directly or rebasing and then merging. The former option results in a 3-way merge and a merge commit, while the latter results in a fast-forward merge and a perfectly linear history. The following diagram demonstrates how rebasing onto the main branch facilitates a fast-forward merge.</p><p>Rebasing is a common way to integrate upstream changes into your local repository. Pulling in upstream changes with Git merge results in a superfluous merge commit every time you want to see how the project has progressed. On the other hand, rebasing is like saying, “I want to base my changes on what everybody has already done.”</p></blockquote><p>注：写这个的时候，我自己对 rebase 的理解也很模糊。</p><p>任何时候不清楚的时候请终止 rebase:</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git rebase --abort
+</span></span></code></pre></div><p>反复操练几次，git 有友好的提示信息。</p><p><strong>撤销上次rebase</strong></p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#7f848e># 先使用 reflog查看分支变动历史</span>
+</span></span><span style=display:flex><span>$ git reflog
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># 选中rebase前的commit id (hash)</span>
+</span></span><span style=display:flex><span>$ git reset --hard &lt;commit_id&gt;
+</span></span></code></pre></div><p>参考：<a href=https://juejin.cn/s/git%20%E6%92%A4%E9%94%80rebase>此处</a>。</p><hr><h2 id=command-g>Command <code>g++</code></h2><p>自定义包含路径</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>g++ main.cpp -I/usr/local/include
+</span></span></code></pre></div><p>自定义链接静态或动态库</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>g++ main.cpp -L/path/to/lib_file
+</span></span><span style=display:flex><span>g++ main.cpp -L/usr/lib64 -lcurl -lssl
+</span></span></code></pre></div><p>上面第二个命令链接了<code>/usr/lib64/</code>目录下的<code>libcurl.so</code>和<code>libssl.so</code>两个动态库文件。静态库也是同样链接。说起来静态库，想起了最近折腾的一个东西，你可能会想把多个静态库合成一个静态库，想当然的直接用<code>ar</code>合并，但是不行，必须要把两个静态库全解压出来，再合并所有的 object file. 参见：<a href=https://www.cnblogs.com/fnlingnzb-learner/p/8127456.html>here</a></p><p>生成机器码</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>g++ main.cpp -c
+</span></span></code></pre></div><p>生成汇编代码</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>g++ main.cpp -S
+</span></span></code></pre></div><p>仅预编译</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>g++ main.cpp -E &gt; main.i
+</span></span></code></pre></div><hr><h2 id=aria2c>Aria2c</h2><p><a href=https://aria2.github.io/>aria2c</a> 是个好东西。支持连接，磁力，种子下载。轻量且强大，可直接使用，也可作为服务端，配合 WebUI 使用。</p><ul><li>配置：参考 <a href=https://binux.blog/2012/12/aria2-examples/>aria2 配置示例</a></li><li>WebUI:<ul><li><a href=http://binux.github.io/yaaw/demo/>YAAW</a></li><li><a href=https://ziahamza.github.io/webui-aria2/#>ziahamza</a></li><li><a href=http://ariang.mayswind.net/latest/>AriaNg</a></li></ul></li></ul><p>Note: jsonrpc 地址格式为 <code>http://token:&lt;rpc-secret>@hostname:port/jsonrpc</code>
 令牌填写自己设置的 <code>rpc-secret</code>
-<img src="https://i.loli.net/2018/12/28/5c263327c4214.png" alt=""></p>
-<p><code>xxx</code> 替换为自己设置的 <code>rpc-secret</code>
-<img src="https://i.loli.net/2018/12/28/5c263398854c3.png" alt=""></p>
-<h2 id="mpv">MPV</h2>
-<p><a href="https://mpv.io">MPV</a> 是一个轻量、简约、跨平台的播放器。据我自己体验，在Linux下比mplayer播放效果要好，mplayer倍速会掉帧，而mpv则不太明显。</p>
-<h2 id="html">HTML</h2>
-<p>给网页添加BGM。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">embed</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bgm.mp3&#34;</span> <span style="color:#a6e22e">autostart</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">loop</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;20&#34;</span> <span style="color:#a6e22e">hidden</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span>&gt;
-</code></pre></div><p>又，添加可以控制播放的音乐。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">audio</span> <span style="color:#a6e22e">autoplay</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;autoplay&#34;</span> <span style="color:#a6e22e">controls</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;controls&#34;</span> <span style="color:#a6e22e">loop</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;loop&#34;</span> <span style="color:#a6e22e">preload</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;auto&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;music.mp3&#34;</span>&gt;Your browser doesn&#39;t support H5 audio flag!&lt;/<span style="color:#f92672">audio</span>&gt;
-</code></pre></div><hr>
-<h2 id="使用xrandr设置多屏显示">使用<code>xrandr</code>设置多屏显示</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ xrandr
-Screen 0: minimum <span style="color:#ae81ff">320</span> x 200, current <span style="color:#ae81ff">1920</span> x 1080, maximum <span style="color:#ae81ff">8192</span> x <span style="color:#ae81ff">8192</span>
-eDP-1 connected primary 1920x1080+0+0 <span style="color:#f92672">(</span>normal left inverted right x axis y axis<span style="color:#f92672">)</span> 294mm x 165mm
-   1920x1080     59.93*+
-   1680x1050     59.95    59.88
-   1400x1050     59.98
-   1600x900      59.99    59.94    59.95    59.82
-   1280x1024     60.02
-   1400x900      59.96    59.88
-   1280x960      60.00
-   1440x810      60.00    59.97
-   1368x768      59.88    59.85
-   1280x800      59.99    59.97    59.81    59.91
-   1280x720      60.00    59.99    59.86    59.74
-   1024x768      60.04    60.00
-   960x720       60.00
-   928x696       60.05
-   896x672       60.01
-   1024x576      59.95    59.96    59.90    59.82
-   960x600       59.93    60.00
-   960x540       59.96    59.99    59.63    59.82
-   800x600       60.00    60.32    56.25
-   840x525       60.01    59.88
-   864x486       59.92    59.57
-   700x525       59.98
-   800x450       59.95    59.82
-   640x512       60.02
-   700x450       59.96    59.88
-   640x480       60.00    59.94
-   720x405       59.51    58.99
-   684x384       59.88    59.85
-   640x400       59.88    59.98
-   640x360       59.86    59.83    59.84    59.32
-   512x384       60.00
-   512x288       60.00    59.92
-   480x270       59.63    59.82
-   400x300       60.32    56.34
-   432x243       59.92    59.57
-   320x240       60.05
-   360x202       59.51    59.13
-   320x180       59.84    59.32
-DP-1 disconnected <span style="color:#f92672">(</span>normal left inverted right x axis y axis<span style="color:#f92672">)</span>
-HDMI-1 disconnected <span style="color:#f92672">(</span>normal left inverted right x axis y axis<span style="color:#f92672">)</span>
-HDMI-2 connected 1920x1080+0+0 <span style="color:#f92672">(</span>normal left inverted right x axis y axis<span style="color:#f92672">)</span> 527mm x 296mm
-   1920x1080     60.00*+  60.00    50.00    59.94
-   1920x1080i    60.00    60.00    50.00    59.94
-   1600x1200     60.00
-   1280x1024     75.02    60.02
-   1152x864      75.00
-   1280x720      60.00    60.00    50.00    59.94
-   1024x768      75.03    60.00
-   800x600       75.00    60.32
-   720x576       50.00    50.00
-   720x576i      50.00    50.00
-   720x480       60.00    60.00    59.94    59.94    59.94
-   720x480i      60.00    60.00    59.94    59.94
-   640x480       75.00    60.00    59.94    59.94
-   720x400       70.08
-</code></pre></div><p>观察输出可知，连接了两个显示器(eDP-1, HDMI-2)，其中eDP-1是主显示器。如果第二块屏幕无显示，执行下面的命令。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xrandr --output HDMI-2
-</code></pre></div><p>又，指定分辨率为1920x1080，</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xrandr --output HDMI-2 --mode 1920x1080
-</code></pre></div><p>又，设置为右侧扩展屏，即光标向右可移动至第二块屏，</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xrandr --output HDMI-2 --right-of eDP-1
-</code></pre></div><p>又，连接上第二块屏，想关掉内置显示屏，（警告：不要随便关掉内置屏）</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xrandr --output eDP-1 --off
-</code></pre></div><p>又，开启内置屏。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xrandr --output eDP-1 --auto
-</code></pre></div><h2 id="网络">网络</h2>
-<p>查看被监听端口</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">netstat -tulpn | grep LISTEN
-</code></pre></div><h2 id="htop基本操作">Htop基本操作</h2>
-<p>Htop类似于top，但比top更现代化，支持鼠标操作，支持颜色主题。在命令行键入htop，会呈现如下界面。(图片来源：https://blog.csdn.net/freeking101/article/details/79173903)</p>
-<p><img src="/img/htop.jpg" alt=""></p>
-<p>平均负载区的三个数字分别表示过去5、10、15分钟系统的平均负载。进程区每一列的意义分别是：</p>
-<ul>
-<li>PID: 进程号</li>
-<li>USER: 进程所有者的用户名</li>
-<li>PRI: 优先级别</li>
-<li>NI: NICE值（优先级别数值），越小优先级越高</li>
-<li>VIRT: 虚拟内存</li>
-<li>RES: 物理内存</li>
-<li>SHR: 共享内存</li>
-<li>S: 进程状态（S[leep], R[unning], Z[ombie], N表示优先级为负数）</li>
-<li>CPU%: 该进程占用的CPU使用率</li>
-<li>MEM%: 该进程占用的物理内存和总内存的百分比</li>
-<li>TIME+: 该进程启动后占用的CPU时间</li>
-<li>Command: 该进程的启动命令</li>
-</ul>
-<p>常用快捷键可在htop界面按?显示。</p>
-<ul>
-<li>H: 显示/隐藏用户子线程</li>
-<li>Space: 标记进程</li>
-<li>k: 杀死已标记进程</li>
-</ul>
-<h1 id="reference">Reference</h1>
-<ul>
-<li><a href="https://kxp555.coding.me/2017/11/23/Linux%E4%B8%8B%E8%A7%86%E9%A2%91%E8%BD%ACgif/">linux下视频转gif</a></li>
-<li><a href="https://www.maketecheasier.com/run-bash-commands-background-linux/">Running Bash Commands in the Background the Right Way [Linux]</a></li>
-</ul>
-<section class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1" role="doc-endnote">
-<p><a href="https://gist.github.com/heiswayi/350e2afda8cece810c0f6116dadbe651">https://gist.github.com/heiswayi/350e2afda8cece810c0f6116dadbe651</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</section>
-
-                    
-                    <HR width="100%" id="EOF">
-                    <p style="color:#777;">Last modified on 2019-01-17</p>
-                    
-                </div>
-            </div>
-            
-            
-            <nav class="post-pagination">
-
-                
-                <a class="newer-posts" href="https://guyueshui.github.io/yukynn/posts/shell-intro/">
-                    Next<br>Brief Introduction to Shell Script
-                </a>
-                
-                
-                
-                <a class="older-posts" href="https://guyueshui.github.io/yukynn/posts/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%87%8D%E8%A3%85linux/">
-                    Previous<br>记一次重装 Linux
-                </a>
-                
-            </nav>
-            <div class="post-comment-wrapper">
-                
-
-
-
-
-
-
-            </div>
-        </div>
-    </div>
-</div>
-
-            </div><div id="single-column-footer">Powered by <a href="https://gohugo.io">Hugo</a>
-|
-Theme - <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a>
-<br>
-&copy;
-	
-	2020 Yukynnの窝
-	
-</div>
-    	</div>
-    <script src="https://guyueshui.github.io/yukynn/js/journal.js"></script>
-    </body>
-</html>
+<img src=https://i.loli.net/2018/12/28/5c263327c4214.png alt></p><p><code>xxx</code> 替换为自己设置的 <code>rpc-secret</code>
+<img src=https://i.loli.net/2018/12/28/5c263398854c3.png alt></p><h2 id=mpv>MPV</h2><p><a href=https://mpv.io>MPV</a> 是一个轻量、简约、跨平台的播放器。据我自己体验，在 Linux 下比 mplayer 播放效果要好，mplayer 倍速会掉帧，而 mpv 则不太明显。</p><h2 id=html>HTML</h2><p>给网页添加 BGM。</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>&lt;<span style=color:#e06c75>embed</span> <span style=color:#e06c75>src</span><span style=color:#56b6c2>=</span><span style=color:#98c379>&#34;bgm.mp3&#34;</span> <span style=color:#e06c75>autostart</span><span style=color:#56b6c2>=</span><span style=color:#98c379>&#34;true&#34;</span> <span style=color:#e06c75>loop</span><span style=color:#56b6c2>=</span><span style=color:#98c379>&#34;true&#34;</span> <span style=color:#e06c75>width</span><span style=color:#56b6c2>=</span><span style=color:#98c379>&#34;300&#34;</span> <span style=color:#e06c75>height</span><span style=color:#56b6c2>=</span><span style=color:#98c379>&#34;20&#34;</span> <span style=color:#e06c75>hidden</span><span style=color:#56b6c2>=</span><span style=color:#98c379>&#34;true&#34;</span>&gt;
+</span></span></code></pre></div><p>又，添加可以控制播放的音乐。</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>&lt;<span style=color:#e06c75>audio</span> <span style=color:#e06c75>autoplay</span><span style=color:#56b6c2>=</span><span style=color:#98c379>&#34;autoplay&#34;</span> <span style=color:#e06c75>controls</span><span style=color:#56b6c2>=</span><span style=color:#98c379>&#34;controls&#34;</span> <span style=color:#e06c75>loop</span><span style=color:#56b6c2>=</span><span style=color:#98c379>&#34;loop&#34;</span> <span style=color:#e06c75>preload</span><span style=color:#56b6c2>=</span><span style=color:#98c379>&#34;auto&#34;</span> <span style=color:#e06c75>src</span><span style=color:#56b6c2>=</span><span style=color:#98c379>&#34;music.mp3&#34;</span>&gt;Your browser doesn&#39;t support H5 audio flag!&lt;/<span style=color:#e06c75>audio</span>&gt;
+</span></span></code></pre></div><hr><h2 id=使用xrandr设置多屏显示>使用<code>xrandr</code>设置多屏显示</h2><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ xrandr
+</span></span><span style=display:flex><span>Screen 0: minimum <span style=color:#d19a66>320</span> x 200, current <span style=color:#d19a66>1920</span> x 1080, maximum <span style=color:#d19a66>8192</span> x <span style=color:#d19a66>8192</span>
+</span></span><span style=display:flex><span>eDP-1 connected primary 1920x1080+0+0 <span style=color:#56b6c2>(</span>normal left inverted right x axis y axis<span style=color:#56b6c2>)</span> 294mm x 165mm
+</span></span><span style=display:flex><span>   1920x1080     59.93*+
+</span></span><span style=display:flex><span>   1680x1050     59.95    59.88
+</span></span><span style=display:flex><span>   1400x1050     59.98
+</span></span><span style=display:flex><span>   1600x900      59.99    59.94    59.95    59.82
+</span></span><span style=display:flex><span>   1280x1024     60.02
+</span></span><span style=display:flex><span>   1400x900      59.96    59.88
+</span></span><span style=display:flex><span>   1280x960      60.00
+</span></span><span style=display:flex><span>   1440x810      60.00    59.97
+</span></span><span style=display:flex><span>   1368x768      59.88    59.85
+</span></span><span style=display:flex><span>   1280x800      59.99    59.97    59.81    59.91
+</span></span><span style=display:flex><span>   1280x720      60.00    59.99    59.86    59.74
+</span></span><span style=display:flex><span>   1024x768      60.04    60.00
+</span></span><span style=display:flex><span>   960x720       60.00
+</span></span><span style=display:flex><span>   928x696       60.05
+</span></span><span style=display:flex><span>   896x672       60.01
+</span></span><span style=display:flex><span>   1024x576      59.95    59.96    59.90    59.82
+</span></span><span style=display:flex><span>   960x600       59.93    60.00
+</span></span><span style=display:flex><span>   960x540       59.96    59.99    59.63    59.82
+</span></span><span style=display:flex><span>   800x600       60.00    60.32    56.25
+</span></span><span style=display:flex><span>   840x525       60.01    59.88
+</span></span><span style=display:flex><span>   864x486       59.92    59.57
+</span></span><span style=display:flex><span>   700x525       59.98
+</span></span><span style=display:flex><span>   800x450       59.95    59.82
+</span></span><span style=display:flex><span>   640x512       60.02
+</span></span><span style=display:flex><span>   700x450       59.96    59.88
+</span></span><span style=display:flex><span>   640x480       60.00    59.94
+</span></span><span style=display:flex><span>   720x405       59.51    58.99
+</span></span><span style=display:flex><span>   684x384       59.88    59.85
+</span></span><span style=display:flex><span>   640x400       59.88    59.98
+</span></span><span style=display:flex><span>   640x360       59.86    59.83    59.84    59.32
+</span></span><span style=display:flex><span>   512x384       60.00
+</span></span><span style=display:flex><span>   512x288       60.00    59.92
+</span></span><span style=display:flex><span>   480x270       59.63    59.82
+</span></span><span style=display:flex><span>   400x300       60.32    56.34
+</span></span><span style=display:flex><span>   432x243       59.92    59.57
+</span></span><span style=display:flex><span>   320x240       60.05
+</span></span><span style=display:flex><span>   360x202       59.51    59.13
+</span></span><span style=display:flex><span>   320x180       59.84    59.32
+</span></span><span style=display:flex><span>DP-1 disconnected <span style=color:#56b6c2>(</span>normal left inverted right x axis y axis<span style=color:#56b6c2>)</span>
+</span></span><span style=display:flex><span>HDMI-1 disconnected <span style=color:#56b6c2>(</span>normal left inverted right x axis y axis<span style=color:#56b6c2>)</span>
+</span></span><span style=display:flex><span>HDMI-2 connected 1920x1080+0+0 <span style=color:#56b6c2>(</span>normal left inverted right x axis y axis<span style=color:#56b6c2>)</span> 527mm x 296mm
+</span></span><span style=display:flex><span>   1920x1080     60.00*+  60.00    50.00    59.94
+</span></span><span style=display:flex><span>   1920x1080i    60.00    60.00    50.00    59.94
+</span></span><span style=display:flex><span>   1600x1200     60.00
+</span></span><span style=display:flex><span>   1280x1024     75.02    60.02
+</span></span><span style=display:flex><span>   1152x864      75.00
+</span></span><span style=display:flex><span>   1280x720      60.00    60.00    50.00    59.94
+</span></span><span style=display:flex><span>   1024x768      75.03    60.00
+</span></span><span style=display:flex><span>   800x600       75.00    60.32
+</span></span><span style=display:flex><span>   720x576       50.00    50.00
+</span></span><span style=display:flex><span>   720x576i      50.00    50.00
+</span></span><span style=display:flex><span>   720x480       60.00    60.00    59.94    59.94    59.94
+</span></span><span style=display:flex><span>   720x480i      60.00    60.00    59.94    59.94
+</span></span><span style=display:flex><span>   640x480       75.00    60.00    59.94    59.94
+</span></span><span style=display:flex><span>   720x400       70.08
+</span></span></code></pre></div><p>观察输出可知，连接了两个显示器 (eDP-1, HDMI-2)，其中 eDP-1 是主显示器。如果第二块屏幕无显示，执行下面的命令。</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>xrandr --output HDMI-2
+</span></span></code></pre></div><p>又，指定分辨率为 1920x1080，</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>xrandr --output HDMI-2 --mode 1920x1080
+</span></span></code></pre></div><p>又，设置为右侧扩展屏，即光标向右可移动至第二块屏，</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>xrandr --output HDMI-2 --right-of eDP-1
+</span></span></code></pre></div><p>又，连接上第二块屏，想关掉内置显示屏，（警告：不要随便关掉内置屏）</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>xrandr --output eDP-1 --off
+</span></span></code></pre></div><p>又，开启内置屏。</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>xrandr --output eDP-1 --auto
+</span></span></code></pre></div><p>某些情况下会无法检测显示器的最大分辨率，此时需要手动设置显示器的分辨率。参考<a href=https://wiki.archlinuxcn.org/zh-hans/Xrandr#%E6%B7%BB%E5%8A%A0%E6%9C%AA%E8%A2%AB%E6%A3%80%E6%B5%8B%E5%88%B0%E7%9A%84%E6%9C%89%E6%95%88%E5%88%86%E8%BE%A8%E7%8E%87>此处</a>。</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#7f848e># 获取参数值</span>
+</span></span><span style=display:flex><span>$ cvt <span style=color:#d19a66>2560</span> <span style=color:#d19a66>1440</span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># 2560x1440 59.96 Hz (CVT 3.69M9) hsync: 89.52 kHz; pclk: 312.25 MHz</span>
+</span></span><span style=display:flex><span>Modeline <span style=color:#98c379>&#34;2560x1440_60.00&#34;</span>  312.25  <span style=color:#d19a66>2560</span> <span style=color:#d19a66>2752</span> <span style=color:#d19a66>3024</span> <span style=color:#d19a66>3488</span>  <span style=color:#d19a66>1440</span> <span style=color:#d19a66>1443</span> <span style=color:#d19a66>1448</span> <span style=color:#d19a66>1493</span> -hsync +vsync
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># 新建 mode</span>
+</span></span><span style=display:flex><span>$ xrandr --newmode <span style=color:#98c379>&#34;2560x1440_60.00&#34;</span>  312.25  <span style=color:#d19a66>2560</span> <span style=color:#d19a66>2752</span> <span style=color:#d19a66>3024</span> <span style=color:#d19a66>3488</span>  <span style=color:#d19a66>1440</span> <span style=color:#d19a66>1443</span> <span style=color:#d19a66>1448</span> <span style=color:#d19a66>1493</span> -hsync +vsync
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># 为指定显示设备 add mode</span>
+</span></span><span style=display:flex><span>$ xrandr --addmode HDMI2 <span style=color:#98c379>&#34;2560x1440_60.00&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#7f848e># 指定显示器分辨率</span>
+</span></span><span style=display:flex><span>$ xrandr --output HDMI2 --mode <span style=color:#98c379>&#34;2560x1440_60.00&#34;</span>
+</span></span></code></pre></div><blockquote><p>如果显示屏分辨率更改成功但窗口显示不完整（即只有左上角以指定分辨率显示，其他部分空白），可以尝试关闭内置显示屏，此时显示器应该能以完整窗口显示内容。</p></blockquote><hr><h2 id=网络>网络</h2><p>查看被监听端口</p><div class=highlight><pre tabindex=0 style=color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>netstat -tulpn | grep LISTEN
+</span></span></code></pre></div><hr><h2 id=htop-基本操作>Htop 基本操作</h2><p>Htop 类似于 top，但比 top 更现代化，支持鼠标操作，支持颜色主题。在命令行键入 htop，会呈现如下界面。(图片来源：https://blog.csdn.net/freeking101/article/details/79173903)</p><p><img src=/img/htop.jpg alt></p><p>平均负载区的三个数字分别表示过去 5、10、15 分钟系统的平均负载。进程区每一列的意义分别是：</p><ul><li>PID: 进程号</li><li>USER: 进程所有者的用户名</li><li>PRI: 优先级别</li><li>NI: NICE 值（优先级别数值），越小优先级越高</li><li>VIRT: 虚拟内存</li><li>RES: 物理内存</li><li>SHR: 共享内存</li><li>S: 进程状态（S[leep], R[unning], Z[ombie], N 表示优先级为负数）</li><li>CPU%: 该进程占用的 CPU 使用率</li><li>MEM%: 该进程占用的物理内存和总内存的百分比</li><li>TIME+: 该进程启动后占用的 CPU 时间</li><li>Command: 该进程的启动命令</li></ul><p>常用快捷键可在 htop 界面按？显示。</p><ul><li>H: 显示/隐藏用户子线程</li><li>Space: 标记进程</li><li>k: 杀死已标记进程</li></ul><h1 id=reference>Reference</h1><ul><li><a href=https://kxp555.coding.me/2017/11/23/Linux%E4%B8%8B%E8%A7%86%E9%A2%91%E8%BD%ACgif/>linux 下视频转 gif</a></li><li><a href=https://www.maketecheasier.com/run-bash-commands-background-linux/>Running Bash Commands in the Background the Right Way [Linux]</a></li></ul><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p><a href=https://gist.github.com/heiswayi/350e2afda8cece810c0f6116dadbe651>https://gist.github.com/heiswayi/350e2afda8cece810c0f6116dadbe651</a>&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div><hr width=100% id=EOF><p style=color:#777></p></div></div><nav class=post-pagination><a class=newer-posts href=/posts/chinese/><br>中文文本测试
+</a><a class=older-posts href=/posts/post-5/><br>Typography - Test for features</a></nav><div class=post-comment-wrapper><p style=opacity:.6 align=center><small></small></p></div></div></div></div></div><div id=sideContainer class=side-container><a class="a-block nav-head false" href=https://example.com><div class=nav-title>Yukynnの窝</div><div class=nav-subtitle>子在川上曰，逝者如斯夫。</div></a><div class=nav-link-list><a class="a-block nav-link-item active" href=/posts>归档
+</a><a class="a-block nav-link-item false" href=/tags>标签
+</a><a class="a-block nav-link-item false" href=/index.xml>订阅</a></div><div class=nav-footer><a href=https://github.com/amazingrise/hugo-theme-diary>Diary</a> <a href=https://risehere.net/>Rise</a><br><a href=https://mak1t0.cc/ target=_blank rel="noreferrer noopener">Makito</a>'s <a href=https://github.com/SumiMakito/hexo-theme-journal/ target=_blank rel="noreferrer noopener">Journal.</a><br><br>&copy;
+2020 Yukynnの窝</div></div><div id=extraContainer class=extra-container><div class=toc-wrapper><div class=toc><div class=toc-content><center>- -</center><ul><ul><li><a href=#ffmepg class=nav-ffmepg>FFmepg</a></li><ul><li><a href=#%e8%bd%ac%e8%a7%86%e9%a2%91%e4%b8%ba-gif class=nav-转视频为-gif>转视频为 gif</a></li><li><a href=#vob-%e8%bd%ac-mp4 class=nav-vob-转-mp4>VOB 转 MP4</a></li><li><a href=#ts-%e8%bd%ac-mp4 class=nav-ts-转-mp4>TS 转 MP4</a></li></ul><li><a href=#imagemagick class=nav-imagemagick>ImageMagick</a></li><ul><li><a href=#%e5%9b%be%e7%89%87%e8%bd%ac%e6%8d%a2 class=nav-图片转换>图片转换</a></li></ul><li><a href=#shell class=nav-shell>Shell</a></li><ul><li><a href=#%e8%a1%8c%e5%86%85%e6%93%8d%e4%bd%9c class=nav-行内操作>行内操作</a></li><li><a href=#%e4%bb%bb%e5%8a%a1%e6%8e%a7%e5%88%b6 class=nav-任务控制>任务控制</a></li><li><a href=#%e5%90%8e%e5%8f%b0%e8%bf%90%e8%a1%8c%e5%91%bd%e4%bb%a4 class=nav-后台运行命令>后台运行命令</a></li><li><a href=#%e5%90%8c%e6%97%b6%e8%be%93%e5%87%ba%e5%88%b0-console-%e5%92%8c%e6%96%87%e4%bb%b6 class=nav-同时输出到-console-和文件>同时输出到 console 和文件</a></li><li><a href=#%e4%bb%8e%e7%b3%bb%e7%bb%9f%e4%b8%ad%e8%b8%a2%e5%87%ba%e6%9f%90%e4%b8%aa%e7%94%a8%e6%88%b7 class=nav-从系统中踢出某个用户>从系统中踢出某个用户</a></li></ul><li><a href=#command-find class=nav-command-find>Command find</a></li><li><a href=#command-grep class=nav-command-grep>Command grep</a></li><li><a href=#command-xargs class=nav-command-xargs>Command xargs</a></li><li><a href=#command-sed class=nav-command-sed>Command sed</a></li><li><a href=#command-cut class=nav-command-cut>Command cut</a></li><li><a href=#git class=nav-git>Git</a></li><li><a href=#command-g class=nav-command-g>Command g++</a></li><li><a href=#aria2c class=nav-aria2c>Aria2c</a></li><li><a href=#mpv class=nav-mpv>MPV</a></li><li><a href=#html class=nav-html>HTML</a></li><li><a href=#%e4%bd%bf%e7%94%a8xrandr%e8%ae%be%e7%bd%ae%e5%a4%9a%e5%b1%8f%e6%98%be%e7%a4%ba class=nav-使用xrandr设置多屏显示>使用xrandr设置多屏显示</a></li><li><a href=#%e7%bd%91%e7%bb%9c class=nav-网络>网络</a></li><li><a href=#htop-%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c class=nav-htop-基本操作>Htop 基本操作</a></li></ul><li><a href=#reference class=nav-reference>Reference</a></li></ul></div></div></div><div class=pagination><a id=globalBackToTop class="pagination-action animated-visibility" href=#top :class="{ invisible: scrollY == 0 }"><i class="material-icons pagination-action-icon">keyboard_arrow_up
+</i></a><a type=button class=pagination-action id=darkModeToggleButton><span class="material-icons pagination-action-icon" id=darkModeToggleIcon>dark_mode</span></a></div></div><div id=single-column-footer><a href=https://github.com/amazingrise/hugo-theme-diary>Diary</a> <a href=https://risehere.net/>Rise</a><br><a href=https://mak1t0.cc/ target=_blank rel="noreferrer noopener">Makito</a>'s <a href=https://github.com/SumiMakito/hexo-theme-journal/ target=_blank rel="noreferrer noopener">Journal.</a><br><br>&copy;
+2020 Yukynnの窝</div></div><script src=/js/journal.js></script></body></html>
