@@ -3,8 +3,8 @@ title: Hello World
 date: 2020-03-11T20:50:39+08:00
 lastmod: 2020-03-11T20:50:39+08:00
 cover: /artworks/bilibilier.jpg
-categories: ["category1"]
 tags: ["tag1", "tag2"]
+description: 你好，世界！
 # showcase: true
 ---
 
