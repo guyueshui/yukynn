@@ -1,6 +1,5 @@
 # hugo site config
-baseurl = "https://example.com"
-# baseURL = "https://guyueshui.github.io/yukynn"
+baseURL = "https://guyueshui.github.io/yukynn"
 languageCode = "zh-cn"
 defaultContentLanguage = "zh-cn"
 title = "Yukynnの窝"
